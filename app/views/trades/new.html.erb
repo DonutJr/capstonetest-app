@@ -1,0 +1,46 @@
+<h1>New Trade</h1>
+
+<% if @errors %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@trade.errors.count, "Error") %> prohibited this trade from being entered</h2>
+  <ul>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
+
+  <% end %>
+</ul>
+</div>
+<% end %>
+
+<%= form_tag "/trades", method: :post do %>
+
+  
+  <div>
+    Ticker: 
+    <select name="coin_id" class="form-field-dark">
+      <% @coins.each do |coin| %>
+        <option value="<%= coin.id %>" ><%= coin.ticker %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    Direction: <input type="text" name="direction">
+  </div>
+ 
+  <div>
+    Execution Price: <input type="text" name="execution_price" >
+  </div>
+
+  <div>
+    Quantity: <input type="text" name="quantity" >
+  </div>
+
+  <div>
+    Date executed: <input type="text" name="timestamp" >
+  </div>
+
+
+  <input type="submit" value="Enter Trade">
+
+<% end %>

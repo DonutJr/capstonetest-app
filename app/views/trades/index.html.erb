@@ -1,0 +1,24 @@
+<h1>success. here's a list of your trades so far</h1>
+
+<h2>Total Position:</h2>
+
+
+<% @trades.each do |trade| %>
+
+
+<h3><%=lo %></h3>
+
+
+
+
+
+<% @trades.each do |trade| %>
+
+<h3>Name: <%= trade.coin_id %></h3>
+<h3>Execution Price: <%= trade.execution_price %></h3>
+<h3>Direction <%= trade.direction %></h3>
+<h3>Quantity: <%= trade.quantity %></h3>
+<h3>Date Executed: <%= trade.timestamp %></h3>
+<br>
+
+<% end %>
