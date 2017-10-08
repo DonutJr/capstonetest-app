@@ -1,0 +1,38 @@
+$first-color: lightgreen;
+$second-color: lightred;
+$third-color: #DDDDDD;
+
+h1 {
+}
+
+
+h2 {
+  margin: 100px 150px 100px 80px;
+}
+
+h3 {
+    margin: 0px 150px 0px 80px;
+    border-style: solid;
+    border-width: 1px;
+    
+
+}
+
+body {
+  background-color: $third-color;
+  font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia, serif;
+  background-image: url('vintage-concrete.png');
+}
+
+h3, h4 {
+  background-color: white;
+  color: $second-color;
+}
+
+.product-index-single {
+  height: 500px
+}
+
+.well {
+  width: 120%;
+}

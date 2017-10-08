@@ -1,0 +1,24 @@
+<%= form_tag "/trades/#{@trade.id}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="name" placeholder="<%= @trade.coin.ticker %>">
+  </div>
+  <div>
+    Price: <input type="text" name="execution_price" placeholder="<%= @trade.execution_price %>">
+  </div><div>
+    Direction: <input type="text" name="direction" placeholder="<%= @trade.direction %>">
+  </div><div>
+    Quantity: <input type="text" name="quantity" placeholder="<%= @trade.quantity %>">
+  </div><div>
+    Date: <input type="text" name="date" placeholder="<%= @trade.timestamp %>">
+  </div>
+ 
+
+
+  <input type="submit" value="Update trade" >
+
+
+
+
+
+<% end %>
+

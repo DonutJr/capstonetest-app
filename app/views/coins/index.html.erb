@@ -1,15 +1,33 @@
 <h1>Welcome to Eth Coinmarketcap</h1>
 
-<h2>Your one stop shop for all your Ethereum asset management and daytrading needs. Calculate PnL or plan for retirement</h2>
+<h2>App for Ethereum asset management and daytrading needs. Calculate trade profits or manage your portfolio</h2>
 
-<% @coins.each do |coin| %>
 
-<h3>Ticker: <%= coin.ticker %></h3>
-<h3>Name: <%= coin.name %></h3>
-<h3>Price: <%= coin.current_price %></h3>
-<h3>24hour change: <%= coin.change %></h3>
-<h3>Marketcap: <%= coin.marketcap %></h3>
-<h3>Date: <%= coin.timestamp %></h3>
-<br>
-
+<% @coins.each_slice(3) do |coin_slice| %>
+  <div class="row">
+    <% @coins.each do |coin| %>
+      <div class="col-md-4 col-sm-6 coin-index-single">
+        <div class="well">
+          <h3>Ticker: <%= coin.ticker %></h3>
+          <h3>Name: <%= coin.name %></h3>
+          <h3>Price: <%= coin.current_price %></h3>
+          <h3>24hour change: <%= coin.change %></h3>
+          <h3>Marketcap: <%= coin.marketcap %></h3>
+          <h3>Date: <%= coin.timestamp %></h3>
+       
+          <br>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+

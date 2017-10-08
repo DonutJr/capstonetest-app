@@ -3,22 +3,35 @@
 <h2>Total Position:</h2>
 
 
+
+<h3>REP: <%= current_user.calculate_rep%></h3>
+
+
+
+<br>
+<br>
+<br>
+
+
 <% @trades.each do |trade| %>
 
-
-<h3><%=lo %></h3>
-
-
-
-
-
-<% @trades.each do |trade| %>
-
-<h3>Name: <%= trade.coin_id %></h3>
+<h3>Name: <a href="/trades/<%= trade.id %>"><%= trade.coin.ticker  %></h3>
 <h3>Execution Price: <%= trade.execution_price %></h3>
 <h3>Direction <%= trade.direction %></h3>
 <h3>Quantity: <%= trade.quantity %></h3>
 <h3>Date Executed: <%= trade.timestamp %></h3>
 <br>
 
+
+<% if current_user %>
+  <%= link_to "edit", "/trades/#{ trade.id }/edit", class: "btn btn-danger" %>
 <% end %>
+
+<% if current_user %>
+  <%= link_to "delete", "/trades/#{ trade.id }", method: :delete, class: "btn btn-danger" %>
+<% end %>
+
+<% end %>
+
+
+
