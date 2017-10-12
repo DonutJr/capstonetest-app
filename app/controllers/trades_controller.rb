@@ -42,6 +42,7 @@ class TradesController < ApplicationController
   end
 
   def edit
+        @coins = Coin.all
         @trade = Trade.find(params[:id])
 
   end
@@ -63,7 +64,7 @@ class TradesController < ApplicationController
 
   if @trade.save
       flash[:success] = "Trade Successfully Updated"
-      redirect_to "/trades/#{trade.id}"
+      redirect_to "/trades/#{@trade.id}"
     else
       @errors = @trade.errors.full_messages
     end

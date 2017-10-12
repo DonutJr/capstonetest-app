@@ -1,6 +1,11 @@
 <%= form_tag "/trades/#{@trade.id}", method: :patch do %>
   <div>
-    Name: <input type="text" name="name" placeholder="<%= @trade.coin.ticker %>">
+    Ticker: 
+    <select name="coin_id" class="form-field-dark">
+      <% @coins.each do |coin| %>
+        <option value="<%= coin.id %>" ><%= coin.ticker %></option>
+      <% end %>
+    </select>
   </div>
   <div>
     Price: <input type="text" name="execution_price" placeholder="<%= @trade.execution_price %>">

@@ -9,23 +9,24 @@ class User < ApplicationRecord
   # def calculate_eth
   #   trades.inject(0) { |sum, trade| sum + trade.quantity if trade.coin.ticker == "ETH" } 
   # end
-
-
-  # def calculate_rep
-  #   trades.inject(0) { |sum, trade| sum + trade.quantity if trade.coin.ticker == "REP" } 
-  # end
-
-  def calculate_rep
-    trades.where
+  
+  def calculate_eth
+    trades.where("#{:coin_id} = 1").sum(:quantity)
   end
 
-  # def calculate_dgd
-  #   trades.inject(0) { |sum, trade| sum + trade.quantity if trade.coin.ticker == "DGD" } 
-  # end
 
-  # def calculate_omg
-  #   trades.where coin ticker = omg then do a sum quantity
-  # end
+  def calculate_rep
+    trades.where("#{:coin_id} = 2").sum(:quantity)
+  end
+
+  def calculate_dgd
+    trades.where("#{:coin_id} = 3").sum(:quantity)
+  end
+
+  def calculate_omg
+    trades.where("#{:coin_id} = 4").sum(:quantity)
+  end
+
 
 
 
