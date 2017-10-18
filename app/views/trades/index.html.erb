@@ -1,12 +1,14 @@
 <h1>success. here's a list of your trades so far</h1>
 
 <h2>Total Position:</h2>
-<h3>ETH: <%= current_user.calculate_eth%></h3>
-<h3>REP: <%= current_user.calculate_rep%></h3>
-<h3>DGD: <%= current_user.calculate_dgd%></h3>
-
-<h3>OMG: <%= current_user.calculate_omg%></h3>
-
+<% @coins.each do |coin| %>
+  <% if current_user.trades.any? { |trade| trade.coin_id == coin.id } %>
+      <h3><%= coin.ticker %> Position: <%= current_user.calculate_quantity(coin.id) %> </h3>
+      <h3>Price:  </h3>
+      <h3>Position value: </h3>
+      <h3>24h change: </h3>
+  <% end %>
+<% end %>
 
 
 <br>

@@ -3,24 +3,24 @@
 <h2>App for Ethereum asset management and daytrading needs. Calculate trade profits or manage your portfolio</h2>
 
 
-<% @coins.each_slice(3) do |coin_slice| %>
-  <div class="row">
-    <% @coins.each do |coin| %>
-      <div class="col-md-4 col-sm-6 coin-index-single">
-        <div class="well">
-          <h3>Ticker: <%= coin.ticker %></h3>
-          <h3>Name: <%= coin.name %></h3>
-          <h3>Price: <%= coin.current_price %></h3>
-          <h3>24hour change: <%= coin.change %></h3>
-          <h3>Marketcap: <%= coin.marketcap %></h3>
-          <h3>Date: <%= coin.timestamp %></h3>
-       
-          <br>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<h3>ETH: <%=  %></h3>
+<h3>BTC: <%= @btc['price'] %></h3>
+<h3>REP: <%=  %></h3>
+<h3>DGD: <%= @dgd %></h3>
+<h3>OMG: <%= @omg %></h3>
+<h3>GNT: <%= @gnt %></h3>
+<h3>PAY: <%= @pay %></h3>
+<h3>BAT: <%= @bat %></h3>
+<br>
+<br>
+<% @coins.each do |coin| %>
+  <h3><%= coin.ticker %>: <%= coin.current_price %></h3>
 <% end %>
+
+<br>
+<br>
+<br>
+<%= @coinlist %>
 
 
 
