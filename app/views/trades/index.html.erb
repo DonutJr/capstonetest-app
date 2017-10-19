@@ -1,11 +1,11 @@
 <h1>Trade History</h1>
 
-<h2>Total Position:</h2>
+<h2>Current Position:</h2>
 <% @coins.each do |coin| %>
   <% if current_user.trades.any? { |trade| trade.coin_id == coin.id } %>
       <h3><%= coin.ticker %> Position: <%= current_user.calculate_quantity(coin.id) %> </h3>
-      <h3>Price:  </h3>
-      <h3>Position value: </h3>
+      <h3>Price: <%= coin.coin_price %> </h3>
+      <h3>Position value: <%= number_to_currency(current_user.calculate_quantity(coin.id) * coin.coin_price) %> </h3>
       <h3>24h change: </h3>
       <br>
   <% end %>

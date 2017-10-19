@@ -1,8 +1,8 @@
 class TradesController < ApplicationController
-  before_action :authenticate_user!, :coin_apis
+  before_action :authenticate_user!
 
   def index
-    #@coins = Coin.all
+    @coins = Coin.all
     @trades = Trade.all
   end
 
