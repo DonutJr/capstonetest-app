@@ -3,9 +3,9 @@
 <h2>App for Ethereum asset management and daytrading needs. Calculate trade profits or manage your portfolio</h2>
 
 
-<h3>ETH: <%=  %></h3>
+<h3>ETH: <%= @eth['price'] %></h3>
 <h3>BTC: <%= @btc['price'] %></h3>
-<h3>REP: <%=  %></h3>
+<h3>REP: <%= @rep %></h3>
 <h3>DGD: <%= @dgd %></h3>
 <h3>OMG: <%= @omg %></h3>
 <h3>GNT: <%= @gnt %></h3>
@@ -14,13 +14,8 @@
 <br>
 <br>
 <% @coins.each do |coin| %>
-  <h3><%= coin.ticker %>: <%= coin.current_price %></h3>
+  <h3><%= coin.ticker %>: <%= coin.current_price%></h3>
 <% end %>
-
-<br>
-<br>
-<br>
-<%= @coinlist %>
 
 
 

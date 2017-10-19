@@ -1,4 +1,4 @@
-<h1>success. here's a list of your trades so far</h1>
+<h1>Trade History</h1>
 
 <h2>Total Position:</h2>
 <% @coins.each do |coin| %>
@@ -7,20 +7,16 @@
       <h3>Price:  </h3>
       <h3>Position value: </h3>
       <h3>24h change: </h3>
+      <br>
   <% end %>
 <% end %>
 
-
-<br>
-<br>
-<br>
-
-
+<h2>Individual Trades</h2>
 <% @trades.each do |trade| %>
 
-<h3>Name: <a href="/trades/<%= trade.id %>"><%= trade.coin.ticker  %></h3>
+<h3>Name: <a href="/trades/<%= trade.id %>"><%= trade.coin.ticker  %></a></h3>
 <h3>Execution Price: <%= trade.execution_price %></h3>
-<h3>Direction <%= trade.direction %></h3>
+<h3>Direction: <%= trade.direction %></h3>
 <h3>Quantity: <%= trade.quantity %></h3>
 <h3>Date Executed: <%= trade.timestamp %></h3>
 <br>

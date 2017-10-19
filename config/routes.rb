@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   
   get '/' => 'coins#index'
+  get '/coins/:id' =>'coins#show'
 
   
   get '/trades' => 'trades#index'
