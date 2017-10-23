@@ -1,0 +1,24 @@
+<h1>New Wallet</h1>
+
+<% if @errors %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@wallet.errors.count, "Error") %> prohibited this trade from being entered</h2>
+  <ul>
+  <% @errors.each do |error| %>
+    <li><%= error %></li>
+
+  <% end %>
+</ul>
+</div>
+<% end %>
+
+<%= form_tag "/wallets", method: :post do %>
+
+  <div>
+    Wallet Address: <input type="text" name="address" >
+  </div>
+
+
+  <input type="submit" value="Enter Wallet Address">
+
+<% end %>

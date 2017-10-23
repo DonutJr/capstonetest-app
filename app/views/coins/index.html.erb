@@ -2,9 +2,13 @@
 
 <h2>App for Ethereum asset management and daytrading needs. Calculate trade profits or manage your portfolio</h2>
 
-<% @cointest.each do |coin| %>
-  <h3><%= coin.ticker %>: <%= coin.coin_price%></h3>
+
+
+<% @coins.each do |coin| %>
+  <h3><%= coin.ticker %>: <%= coin.current_price%> Market Cap: <%= coin.current_price * coin.supply.to_i %></h3>
 <% end %>
+
+
 
 
 

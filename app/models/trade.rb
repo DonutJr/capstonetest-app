@@ -3,35 +3,20 @@ class Trade < ApplicationRecord
   belongs_to :coin
   belongs_to :user
 
+  #validates :direction, presence: true
 
-  # def hello
+  def individual_trade_pnl
+    if self.direction == "buy"
+      (self.execution_price) * self.quantity
+    else
+      (self.execution_price) * self.quantity * -1
+    end
+
+  end
+
+ 
 
 
-  #   return "hello"
 
-  # end
 
-  # def calculate_eth
-  #   eth = 0
-  #   if self.coin_id ==1
-  #     eth += self.quantity
-  #   end
-
-  # end
-    
-  # def calculate_rep
-  #   rep = 0
-  #   if self.coin_id ==2
-  #     rep+= self.quantity
-  #   end
-
-  # end
-    
-  
-
-  
-
-  # def calculate_pnl
-
-  # end
 end

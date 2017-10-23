@@ -1,0 +1,30 @@
+<h3>Total Eth value: <%= current_user.total_eth_portfolio %></h3>
+
+
+<h2>Your Wallet Addresses: </h2>
+
+<% @wallets.each do |wallet| %>
+  
+  <h3>Address: <%= wallet.address %></h3>
+
+
+
+  <h3>Eth balance: <%= wallet.get_eth_balance %></h3>
+  <h3>Eth price: <%= @coins.first.current_price %></h3>
+  <h3>Eth position value: <%= wallet.get_eth_balance * @coins.first.current_price %></h3>
+
+  
+
+
+    <% if current_user %>
+      <%= link_to "edit", "/wallets/#{ wallet.id }/edit", class: "btn " %>
+    <% end %>
+
+    <% if current_user %>
+      <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn " %>
+    <% end %>
+
+<% end %>
+
+
+
