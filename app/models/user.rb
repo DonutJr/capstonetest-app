@@ -10,34 +10,16 @@ class User < ApplicationRecord
     return buys - sells
   end
 
-
   def sum_pnl_coin(arg)
-    alltrades = trades.where("#{:coin_id} = #{arg}")
-    pnl = 0
-    alltrades.each do |trade|
-      pnl += trade.individual_trade_pnl
-    end
-    return pnl
+      trades.where("#{:coin_id} = #{arg}").each.sum {|trade| trade.individual_trade_pnl }
   end
 
   def total_pnl
-    alltrades = trades.all
-    pnl = 0
-    alltrades.each do |trade|
-      pnl += trade.individual_trade_pnl
-    end
-    return pnl
-
+    trades.all.each.sum { |trade| trade.individual_trade_pnl }
   end
-##fix
+
   def total_eth_portfolio
-    # port = 0
-    
-    # wallets.each do |wallet|
-    #   port += wallet.get_eth_balance #* Coin.first.coin_price
-    # end
-    # return port
-    wallets.each.sum{|wallet| wallet.get_eth_balance}
+    wallets.each.sum{|wallet| wallet.get_eth_balance * Coin.first.current_price } 
   end
 ##fix
   def total_token_portfolio

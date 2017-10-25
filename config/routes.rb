@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  
-  get '/' => 'coins#index'
+  get '/' => 'pages#index'
+
+  get '/coins' => 'coins#index'
   get '/coins/:id' =>'coins#show'
 
   

@@ -6,9 +6,7 @@ class Wallet < ApplicationRecord
     Unirest.get("https://api.etherscan.io/api?module=account&action=balance&address=#{address}&tag=latest").body['result'].to_f / 1000000000000000000
   end
 
-
-
-  def token_balance(coin)
+  def get_token_balance(coin)
     Unirest.get("https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=#{coin.contract_address}&address=#{self.address}&tag=latest").body['result'].to_f / 1000000000000000000
   end
 

@@ -1,0 +1,165 @@
+/*==================================
+card
+====================================*/
+#cards_element {
+	.card {
+		margin-bottom: 30px;
+		.display-single_element {
+			p {
+				margin-bottom: -10px;
+			}
+		}
+	}
+}
+.card {
+	border: 0px;
+	border-radius: 0px;
+	// background-color: transparent;
+	.card_img {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+	.card-img {
+		border-radius: 0px;
+	}
+	.card-title {
+		margin: 0px;
+		padding: 15px 0 10px;
+		@include transition(all 0.3s ease);
+		&:hover {
+			color: $primary-color;
+		}
+	}
+	.card-block {
+		padding: 0;
+		p.card-text {
+			padding: 15px 0px;
+		}
+		> span {
+		    padding: 0 5px;
+		}
+	}
+
+	&.img-mid {
+		.card_img {
+			padding: 20px 0 20px;
+		}
+		.card-title {
+			padding-top: 0px;
+		}
+		.card-block {
+			padding: 0;
+			p.card-text {
+				padding: 0px 0px 15px;
+			}
+		}
+	}
+	&.img-bottom {
+		.card_img {
+			padding-top: 25px;
+		}
+		.card-title {
+			padding-top: 0px!important;
+		}
+	}
+	.card-img-overlay {
+		p.card-text {
+			color: $white-color;
+		}
+	}
+	&.card-inverse {
+		&:before {
+		    position: absolute;
+		    content: '';
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    background: rgba(20,20,20,0.7);
+		}
+	}
+	// Different Styled Cards =========================
+	&.card-style2, &.card-style3 {
+		.card-block {
+			padding: 15px 0px 30px;
+			position: relative;
+			display: inline-block;
+			&:before {
+				position: absolute;
+				content: '';
+				width: 50px;
+				bottom: 0;
+				height: 3px;
+				background-color: #ccc;
+			}
+		}
+
+		&:hover {
+			.card-block {
+				&:before {
+					background-color: $primary-color;
+				}
+			}
+		}
+	}
+	&.card-style3 {
+		.card-block {
+			margin: -40px auto 0;
+			background: $white-color;
+			border: 1px solid transparent;
+			padding: 30px;
+			padding-bottom: 50px;
+			width: 85%;
+			@include transition(all 0.3s ease);
+			&:before {
+				bottom: 35px;
+				height: 2px;
+				background-color: $border-color;
+			}
+		}
+		&:hover {
+			.card-block {
+				border: 1px solid $border-color;
+			}
+		}
+	}
+	ul.list-inline {
+		li {
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0px;
+			}
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+.date-holder {
+    position: absolute;
+    top: 15px;
+    font-size: 14px;
+    color: #fff;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    padding-top: 13px;
+    left: 15px;
+    span {
+    	font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        display: block;
+    }
+    &::after {
+	    position: absolute;
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    border-top: 0px solid transparent;
+	    border-bottom: 20px solid transparent;
+	    border-left: 15px solid $primary-color;
+	    bottom: -20px;
+	    left: 0;
+	}
+}

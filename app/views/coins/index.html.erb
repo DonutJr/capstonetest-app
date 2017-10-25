@@ -1,12 +1,34 @@
+<br>
+<br>
+<br>
+<br>
+
+
 <h1>Welcome to Eth Coinmarketcap</h1>
 
 <h2>App for Ethereum asset management and daytrading needs. Calculate trade profits or manage your portfolio</h2>
 
 
 
-<% @coins.each do |coin| %>
-  <h3><%= coin.ticker %>: <%= coin.current_price%> Market Cap: <%= coin.current_price * coin.supply.to_i %></h3>
+<% @coins.each_slice(3) do |coin_slice| %>
+  <div class="row">
+    <% coin_slice.each do |coin| %>
+      <div class="col-md-4 col-sm-6 product-index-single">
+        <div>
+          <h2><%= coin.ticker %>: <a><%= coin.current_price %></a></h2>
+          <h3>Marketcap: <%= coin.current_price * coin.supply %></h3>
+          
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,42 @@
+/*=== VARIABLES ===*/
+$primary-color:#4ac8ed;
+$secondary-color:#eaeaea;
+$white-color: #ffffff;
+$black-color: #000000;
+$sand: #f5f5f5;
+$text-color:#848484;
+$title-color: #222222;
+$border-color: #e5e5e5;
+$navy : #0a233b;
+$dark-navy : #071e33;
+@function tint($primary-color, $percentage) {
+  @return mix(white, transparent, $percentage);
+}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+/*============ TEXT COLOR VARIATION =============*/
+.text-primary {
+	color: $primary-color!important;
+}
+.text-dark {
+	color: $title-color!important;
+}
+
+/* Background Colors */
+.bg-white {
+	background-color: $white-color;
+}
+.bg-dark {
+	background-color: $navy;
+}
+
+$success: #49c32c;
+$bg-success: #49c32c;
+$info: #439fdb;
+$bg-info: #439fdb;
+$warning: #eabf38;
+$bg-warning: #eabf38;
+$danger: #f55c5d;
+$bg-danger: #f55c5d;
+$inverse: #323f41;

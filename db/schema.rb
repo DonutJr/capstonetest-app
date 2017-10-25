@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022212410) do
+ActiveRecord::Schema.define(version: 20171025034353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +18,7 @@ ActiveRecord::Schema.define(version: 20171022212410) do
   create_table "coins", force: :cascade do |t|
     t.string "ticker"
     t.string "name"
-    t.integer "current_price"
-    t.integer "change"
-    t.integer "marketcap"
-    t.string "timestamp"
+    t.decimal "current_price", precision: 7, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "supply"

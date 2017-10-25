@@ -1,0 +1,26 @@
+/* ================================================
+--> Elements Gallery style
+================================================== */
+.hover-overlay {
+    h4 {
+        color: $white-color;
+        &:hover {
+           color: $white-color; 
+        }
+    }&.overlay-flex {
+        display: flex;
+        flex-direction: column;
+    }
+}
+i.overlay-icon {
+    width: 70px;
+    height: 70px;
+    display: block;
+    text-align: center;
+    background-color: $white-color;
+    line-height: 70px;
+    font-size: 18px;
+    color: $primary-color;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,211 @@
+/*=== 1.BANNER SLIDER ===*/
+.boxed {
+  .main-slider {
+    overflow:hidden;
+    @include tablet {
+      margin-top: 15px;
+    }
+    @include desktops {
+      margin-top: 15px;
+    }
+    @include large-desktops {
+      margin-top: 80px;
+    }
+  }
+}
+.main-slider{
+  &.container {
+    padding: 0px;
+    @include tablet {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .slick-slider{
+    margin-bottom: 0px;
+    padding: 0;
+    @include tablet {
+      
+    }
+  }
+}
+ .main-slider .slide{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width:100%;
+  height:300px;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  @include mobile-xs{
+    height:250px;
+  }
+  @include tablet {
+    height:400px;
+  }
+  @include desktops {
+    height:600px;
+  }
+  &.slide1, &.slide2, &.slide4{
+    @include mobile-xs{
+      background-position: right center;
+    }
+    @include desktops{
+      background-position:center;
+    }
+  }
+  &.slide3{
+    @include mobile-xs{
+      background-position: 20% center;
+    }
+    @include desktops{
+      background-position:center;
+    }
+  }
+ }
+.version-3 {
+  .main-slider .slide{
+    @include desktops {
+      height:690px;
+    }
+  }
+}
+ .main-slider .slide h1,
+ .main-slider .slide h2,
+ .main-slider .slide h3,
+ .main-slider .slide h4,
+ .main-slider .slide h5,
+ .main-slider .slide h6,
+ .main-slider .slide p,
+ .main-slider .slide .h1,
+ .main-slider .slide .h2,
+ .main-slider .slide .h3,
+ .main-slider .slide .h4,
+ .main-slider .slide .h5,
+ .main-slider .slide .h6{
+  display:block;
+  margin-bottom:0;
+ }
+
+.main-slider .slide-inner1, .main-slider .slide-inner2, .main-slider .slide-inner3, .main-slider .slide-inner4{
+  
+}
+.main-slider .common-inner {
+  @include tablet {
+    margin-left: 30px;
+  }
+  .h1{
+    font-family: 'Playfair Display', serif;
+    color: $white-color;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0;
+    @include mobile-xs {
+      font-size: 30px;
+      line-height: 34px;
+      margin: 0;
+    }
+    @include tablet {
+      font-size: 50px;
+      line-height: 50px;
+      margin: 0 0 10px;
+    }
+    @include desktops {
+      font-size: 50px;
+      line-height: 55px;
+      margin: 0 0 10px;
+    }
+  }
+  .h4 {
+    color: $white-color;
+    margin-bottom: 10px ;
+    margin-top: 0 ;
+    font-size: 13px;
+    margin-bottom: 0;
+    @include tablet {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 10px;
+    }
+  }
+  a.btn{
+    text-align: center;
+    background-color: $primary-color;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 25px;
+    @include tablet {
+      font-size: 14px;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 30px;
+    }
+  }
+  .img-responsive{
+    @include mobile-xs{
+      margin-bottom: 5px;
+      width: 65px;
+    }
+    @include tablet {
+      width: 95px;
+      margin-bottom: 30px;
+    }
+  }
+}
+//animation
+@keyframes drop {
+  0%   {opacity: 0;transform: scale(1.2);}
+  100% {opacity: 1;transform: scale(1);}
+}
+
+.drop {
+  -webkit-animation-name: drop;
+  animation-name: drop;
+  -webkit-transform-origin: center;
+  transform-origin: center ;
+}
+
+/*============================================
+ Event Carousel with Slick Styles 
+ =============================================*/
+.event_carousel {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  &:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    right: 0px;
+    top: 0;
+    bottom: 0;
+    background: rgba(50, 63, 65,0.9);
+  }
+  .event_details {
+    position: relative;
+    padding: 30px;
+    @include tablet {
+      padding: 30px 20px;
+    }
+    span {
+      color: $white-color;
+      font-size: 17px;
+      padding-bottom: 20px;
+    }
+    p {
+      padding-top: 20px;
+      color: $white-color;
+    }
+  }
+}
+

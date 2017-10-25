@@ -1,0 +1,707 @@
+/*==============================================
+--> 5. HOME
+================================================*/
+// @import 'header';
+// @import 'header_v1';
+//@import 'footer';
+
+/*==============================================
+--> 5.1 SLIDER SECTION
+================================================*/
+#banner-slider {
+	.bg-image-holder {
+		height: 200px;
+		@include tablet {
+			height: 400px;
+		}
+		@include desktops {
+			height: 550px;
+		}
+		@include large-desktops {
+			height: 692px;
+		}
+	}
+}
+.slider-caption {
+	position: relative;
+	height: 100%;
+	.caption-content {
+		position: absolute;
+		top: 50%;
+		@include transform(translateY(-50%));
+		h1 {
+			font-size: 20px;
+			color: $title-color;
+			@include tablet {
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
+			@include desktops {
+				font-size: 40px;
+				margin-bottom: 25px;
+			}
+			@include large-desktops {
+				font-size: 50px;
+				margin-bottom: 30px;
+			}
+		}
+		p {
+			font-size: 12px;
+			color: $title-color;
+			margin: 0 0 10px;
+			@include tablet {
+				font-size: 20px;
+				margin: 0 0 30px;
+			}
+			@include desktops {
+				font-size: 20px;
+				margin: 0 0 40px;
+			}
+			@include large-desktops {
+				font-size: 20px;
+				margin: 0 0 50px;
+			}
+			font-weight: 600;
+		}
+		&.caption-right {
+			right: 15px;
+			text-align: right;
+		}
+		.video-link {
+			color: $white-color;
+			font-size: 14px;
+			text-transform: uppercase;
+			span {
+				position: relative;
+				display: inline-block;
+			}
+		}
+		i.play-icon {
+		    position: relative;
+		    height: 80px;
+		    width: 80px;
+		    line-height: 80px;
+		    font-size: 25px;
+		    border-radius: 50%;
+		    display: inline-block;
+		    color: $primary-color;
+		    padding-left: 10px;
+		    text-align: center;
+		    margin-right: 10px;
+		    background: $white-color;
+		    transition: -webkit-transform 0.3s ease;
+		    transition: transform 0.3s ease;
+		    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+		}
+		a.btn {
+			height: 30px;
+		    font-size: 9px;
+		    line-height: 30px;
+		    padding: 0 18px;
+		    font-weight: 700;
+		    @include tablet {
+	    		height: 50px;
+	    	    font-size: 14px;
+	    	    line-height: 50px;
+	    	    padding: 0 40px;
+		    }
+		    &:hover {
+		    	
+		    }
+		}
+	}
+}
+.slick-dotted.slick-slider {
+	margin-bottom: 0px;
+}
+.slick-dots li button {
+    border: 2px solid $primary-color;
+    opacity: 1;
+    background: $primary-color;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    @include transition(all 0.3s ease-in-out);
+}
+.slick-dots li.slick-active button {
+    border: none;
+    opacity: 1;
+    border-radius: 10px;
+    padding-top: 40px;
+    &:before {
+    	content: '';
+    }
+}
+
+.btn {
+	position: relative;
+	z-index: 2;
+	&:before{
+		position: absolute;
+		@include transition(all 0.3s cubic-bezier(0, 0, 0.1, 1));
+		content: '';
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 100%;
+		z-index: -1;
+		background-color: rgba(255,255,255,0.1);
+	}
+	&:hover {
+		&:before {
+			width: 100%;
+		}
+	}
+}
+
+/*==============================================
+--> 5.2 FEATURE SECTION
+================================================*/
+.home-feature {
+	.container {
+		padding: 0px;
+	}
+	.feature_single {
+		position: relative;
+		background-color: transparent;
+		padding: 30px 15px;
+		@include tablet {
+			padding: 70px 15px;
+		}
+		.icon {
+			font-size: 50px;
+			color: $primary-color;
+			position: relative;
+		}
+		h4 {
+			color: $white-color;
+			padding: 25px 0px;
+			position: relative;
+			@include tablet {
+				font-size: 18px;
+				padding: 20px 0px;
+			}
+			@include desktops {
+				font-size: 20px;
+				padding: 25px 0px;
+			}
+		}
+		p {
+			color: $white-color;
+			opacity: 0.7;
+			padding: 0 0px;
+			@include tablet {
+				font-size: 13px;
+				line-height: 24px;
+			}
+			@include desktops {
+				font-size: 15px;
+				line-height: 26px;
+			}
+		}
+	}
+}
+.more-feature {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include tablet {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+}
+.more-feature-left {
+	.more-features {
+		padding-top: 40px;
+	}
+	.feature-icon {
+		display: inline-block;
+		width: 75px;
+		height: 75px;
+		border: 1px solid $border-color;
+		border-radius: 50%;
+		line-height: 75px;
+		text-align: center;
+		position: relative;
+		margin-bottom: 20px;
+		font-size: 24px;
+		color: $primary-color;
+		@include tablet {
+			position: absolute;
+			margin-bottom: 0;
+		}
+	}
+	.feature-details {
+		display: inline-block;
+		@include tablet {
+			padding-left: 100px;
+		}
+		h4 {
+			margin-bottom: 15px;
+			line-height: 1;
+			@include tablet {
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			@include desktops {
+				font-size: 20px;
+				margin-bottom: 15px;
+			}
+		}
+		p {
+			color: $text-color;
+			opacity: 0.7;
+			@include tablet {
+				font-size: 13px;
+				line-height: 24px;
+			}
+			@include desktops {
+				font-size: 15px;
+				line-height: 26px;
+			}
+		}
+	}
+}
+.data-chart {
+	padding-left: 30px;
+	margin-top: 100px;
+	h4 {
+		margin-bottom: 30px;
+	}
+}
+/*==============================================
+--> 5.3 COUNTER UP SECTION
+================================================*/
+.countup-section {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	@include desktops {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	&.bg-image:before {
+		background-color: rgba(10,35,59,0.8);
+	}
+	.counter, span.count {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 40px;
+		padding-bottom: 50px;
+		position: relative;
+		z-index: 555;
+		color: $primary-color;
+		display: inline-block;
+		@include tablet {
+			font-size: 40px;
+		}
+		@include desktops {
+			font-size: 50px;
+		}
+	}
+	.counter:before {
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 25px;
+		height: 2px;
+		background-color: rgba(255,255,255,0.5);
+		width: 50px;
+	}
+	.single_block {
+		margin: 20px 0;
+		@include tablet {
+			margin: 0;
+		}
+	}
+	h5 {
+		color: $white-color;
+		opacity: 0.7;
+	}
+}
+/*==============================================
+--> 5.4 PORTFOLIO SECTION
+================================================*/
+.home-portfolio {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include desktops {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.sectionTitle {
+		margin-bottom: 20px;
+	}
+	.card {
+		margin-top: 30px;
+	}
+	.btn-container {
+		text-align: center;
+		margin-top: 50px;
+	}
+	.hover-overlay.effect-scale {
+		opacity: 1;
+		@include transform(scale(1));
+		@include tablet {
+			opacity: 0;
+			@include transform(scale(0));
+		}
+		&:before {
+			opacity: 1;
+			@include transform(scale(1));
+			@include tablet {
+				opacity: 0;
+				@include transform(scale(0));
+			}
+		}
+		&:before {
+			background-color: rgba(10,35,59,0.9);
+		}
+	}
+	a.btn {
+		&:hover {
+			color: $white-color;
+		}
+	}
+}
+/*==============================================
+--> 5.5 VIDEO + TESTIMONIAL SECTION
+================================================*/
+.home-testimonial {
+	.promo-video > img {
+		max-width: 100%;
+		@include tablet {
+			max-width: unset;
+		}
+	}
+	.video-button {
+		i {
+			position: relative;
+			height: 80px;
+			width: 80px;
+			line-height: 80px;
+			font-size: 35px;
+			border-radius: 50%;
+			display: inline-block;
+			color: $white-color;
+			padding-left: 10px;
+			text-align: center;
+			border: 2px solid $white-color;
+			@include transition(transform 0.3s ease);
+		}
+		&:hover {
+			i {
+				@include transform(scale(1.1));
+			}
+		}
+	}
+	.bg-image {
+		height: 100%;
+		text-align: center;
+		.card {
+			background-color: transparent;
+			padding: 50px 15px;
+			@include tablet {
+				padding: 40px 10px 0;
+			}
+			@include desktops {
+				padding: 80px 40px;
+			}
+			@include large-desktops {
+				padding: 100px 40px;
+			}
+		}
+		.card-block {
+			p {
+				padding: 20px 0;
+				color: $white-color;
+				opacity: 0.7;
+				@include tablet {
+					font-size: 14px;
+					padding: 15px 10px;
+				}
+				@include desktops {
+					font-size: 15px;
+					padding: 20px 0px;
+				}
+			}
+			h4 {
+				font-size: 17px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+		.card_img {
+		    position: relative;
+		    width: 80px;
+		    height: 80px;
+		    border-radius: 50%;
+		    display: inline-block;
+		}
+		&.promo-video {
+			padding-top: 100%;
+			@include desktops {
+				padding-top: 0;
+			}
+			&:before {
+				background-color: rgba(10,35,59,0);
+			}
+		}
+		&:before {
+			background-color: rgba(10,35,59,0.95);
+		}
+	}
+}
+/*==============================================
+--> 5.6 OUR SERVICES
+================================================*/
+.home-services {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include desktops {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.media-box {
+		margin-top: 50px;
+		.media-icon {
+			color: $primary-color;
+		}
+		h4 {
+			margin-bottom: 10px;
+		}
+	}
+}
+// Element media
+.media-box {
+	position: relative;
+	overflow: hidden;
+	max-width: 100;
+	.media-icon {
+		position: absolute;
+		font-size: 40px;
+		display: inline-block;
+	}
+	.media-content {
+		display: inline-block;
+		padding-left: 70px;
+	}
+}
+/*==============================================
+--> 5.7 FORM
+================================================*/
+.home-form {
+	padding-top: 80px;
+	@include desktops {
+		margin-top: 50px;
+		padding-top: 100px;
+	}
+	h2 {
+		color: $white-color;
+		margin-bottom: 50px;
+	}
+	form {
+		margin-bottom: 30px;
+		@include desktops {
+			margin-bottom: 0px;
+		}
+		.btn {
+			letter-spacing: 1px;
+			&:hover {
+				
+			}
+		}
+	}
+	input {
+		background-color: transparent;
+		font-size: 14px;
+		color: $white-color;
+		&:hover, &:active, &:focus {
+			background-color: transparent;
+			color: $white-color;
+		}
+	}
+	.form-control {
+		@include placeholder {
+			color: $white-color;
+			opacity: 0.7;
+		}
+	}
+	.selectOptions {
+		margin-bottom: 30px;
+		.sbHolder > a {
+			color: $white-color;
+			opacity: 0.7;
+		}
+	}
+	.promo-img {
+		display: none;
+		@include desktops {
+			display: block;
+			height: 100%;
+			margin-top: -150px;
+			img {
+				max-width: 500px;
+			}
+		}
+	}
+}
+/*======== MODAL FORM ========*/
+.boxed-menu .topbar a.btn {
+	padding: 0 !important;
+	width: 158px;
+}
+#morphing-content {
+	min-height: 600px;
+	.home-form {
+		margin-top: 0;
+		padding-top: 0;
+		h2 {
+			font-size: 50px;
+			font-family: 'Open Sans', sans-serif;
+		}
+		input.form-control, textarea.form-control, select.form-control {
+			border: 1px solid $white-color;
+			border-color: tint($white-color, 60%);
+			@include placeholder {
+			  color: $white-color;
+			  opacity: 1;
+			  @include transition(opacity 0.3s ease);
+			}
+			&.focus, &:focus, &.active, &:active {
+				@include placeholder {
+				  color: $white-color;
+				  opacity: 0.6;
+				}
+			}
+		}
+		.sbHolder {
+			border: 1px solid tint($white-color, 60%);;
+			> a {
+				color: $white-color;
+				opacity: 1;
+				&:after {
+					right: 20px;
+				}
+			}
+		}
+		.btn {
+			margin-top: 30px;
+			font-size: 16px;
+			font-family: 'Montserrat', sans-serif;
+			height: 58px;
+			line-height: 58px;
+		}
+	}
+}
+
+/*==============================================
+--> 5.8 TEAM
+================================================*/
+.home-team {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include desktops {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.card-style2 {
+		margin-top: 50px;
+		.card-block {
+			padding: 15px 30px;
+		}
+		span {
+			padding-left: 0px;
+			font-style: italic;
+		}
+	}
+}
+/*==============================================
+--> 5.9 BRANDS
+================================================*/
+.brand_carousel .slick-slider {
+	padding: 0px;
+}
+/*==============================================
+--> 5.10 BLOG
+================================================*/
+.home-blog {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@include desktops {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.card {
+		margin-top: 50px;
+	}
+	.card.card-style3 {
+		.card-block {
+			@include tablet {
+				padding: 15px;
+				.card-title {
+					font-size: 18px;
+				}
+				&:before {
+					bottom: 8px;
+				}
+			}
+			@include desktops {
+				padding: 30px;
+				.card-title {
+					font-size: 22px;
+				}
+				&:before {
+					bottom: 15px;
+				}
+			}
+		}
+	}
+}
+/*==============================================
+--> 5.10 NEWSLETTER
+================================================*/
+.newsletter {
+    padding: 50px 0;
+    h4 {
+    	font-size: 24px;
+    	line-height: 1.2;
+		@include tablet {
+    		margin-bottom: 30px;
+    	}
+		@include desktops {
+    		margin-bottom: 0px;
+    	}
+    }
+    form {
+    	margin-top: 30px;
+    	@include tablet {
+    		margin-top: 0px;
+    	}
+        @include desktops {
+        	display: flex;
+        	flex-direction: row;
+        	justify-content: space-between;
+        	align-items: center;
+        }
+        .form-group {
+            margin-bottom: 30px;
+            @include desktops {
+            	width: 38%;
+            	margin-bottom: 0px;
+            }
+        }
+        input {
+            background-color: $white-color;
+            font-size: 14px;
+            color: $title-color;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            box-shadow: 2px 3px 9px rgba(44, 40, 86, 0.1);
+			@include placeholder {
+				color: $text-color;
+			}
+            &:hover, &:active, &:focus {
+            	background-color: $white-color;
+            }
+        }
+    }
+}

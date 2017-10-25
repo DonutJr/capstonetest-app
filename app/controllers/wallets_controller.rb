@@ -2,15 +2,8 @@ class WalletsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      @coins = Coin.all
-      @btc = Unirest.get("https://api.gdax.com/products/BTC-USD/ticker").body
-      @allcoins = Unirest.get("https://bittrex.com/api/v1.1/public/getmarketsummaries").body['result']
-      
-      @coins.each do |coin|
-        coin.current_price = @allcoins.select{ |token| token["MarketName"] == "BTC-#{coin.ticker}" }[0]["Last"] * @btc['price'].to_f
-      end
-
-    @wallets = Wallet.where(user_id: current_user.id)
+    @coins = Coin.get_price
+    @wallets = Wallet.all
   end
 
   def new

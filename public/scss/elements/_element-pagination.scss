@@ -1,0 +1,29 @@
+/* ================================================
+--> Elements pagination style
+================================================== */
+.page-item {
+	a.page-link {
+	    border-radius: 0px!important;
+	    margin-right: 10px;
+	    color: $title-color;
+	    font-size: 17px;
+	    height: 45px;
+	    width: 45px;
+	    line-height: 26px;
+	    overflow: hidden;
+	    text-align: center;
+	    border: 1px solid #dadada;
+	}
+	&.active, &:hover {
+		a.page-link { 
+			background-color: $primary-color;
+			border: 1px solid $primary-color;
+			color: $white-color;
+		}
+	}
+	&:last-child {
+		a.page-link {
+			margin-right: 0px;
+		}
+	}
+}

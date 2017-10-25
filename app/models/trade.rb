@@ -7,11 +7,10 @@ class Trade < ApplicationRecord
 
   def individual_trade_pnl
     if self.direction == "buy"
-      (self.execution_price) * self.quantity
+      (self.coin.current_price - self.execution_price) * self.quantity
     else
-      (self.execution_price) * self.quantity * -1
+      (self.coin.current_price - self.execution_price) * self.quantity * -1
     end
-
   end
 
  

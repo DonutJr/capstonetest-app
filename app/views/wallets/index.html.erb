@@ -1,3 +1,8 @@
+
+<br>
+<br>
+<br>
+<br>
 <h3>Total Eth value: <%= current_user.total_eth_portfolio %></h3>
 
 
@@ -10,8 +15,16 @@
 
 
   <h3>Eth balance: <%= wallet.get_eth_balance %></h3>
-  <h3>Eth price: <%= @coins.first.current_price %></h3>
-  <h3>Eth position value: <%= wallet.get_eth_balance * @coins.first.current_price %></h3>
+  <h3>Eth price: <%= Coin.find_by(ticker: "ETH").current_price %></h3>
+  <h3>Eth position value: <%= wallet.get_eth_balance * Coin.find_by(ticker: "ETH").current_price %></h3>
+
+
+  <% @coins.each do |coin| %>
+    <% if  %>
+  <h3>Any tokens?: <%= wallet. %></h3>
+
+
+
 
   
 
