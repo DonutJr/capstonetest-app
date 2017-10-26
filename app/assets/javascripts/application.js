@@ -12,5 +12,5 @@
 //
 //= require rails-ujs
 //= require jquery 
-
+//= require vue
 //= require_tree .

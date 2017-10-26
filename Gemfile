@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'vuejs-rails'
+
 
 gem 'jquery-rails', '~> 4.3.1'
 gem 'unirest', '~> 1.1.2'

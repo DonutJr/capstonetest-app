@@ -4,6 +4,7 @@ class WalletsController < ApplicationController
   def index
     @coins = Coin.get_price
     @wallets = Wallet.all
+    @eth = Coin.find_by(ticker: "ETH")
   end
 
   def new

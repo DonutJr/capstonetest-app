@@ -14,7 +14,13 @@ Rails.application.routes.draw do
   patch '/trades/:id' => 'trades#update'
   delete '/trades/:id' => 'trades#destroy'
 
-
+  get '/wallets' => 'wallets#index'
+  get '/wallets/new' => 'wallets#new'
+  post '/wallets' => 'wallets#create'
+  get '/wallets/:id' => 'wallets#show'
+  get '/wallets/:id/edit' => 'wallets#edit'
+  patch '/wallets/:id' => 'wallets#update'
+  delete '/wallets/:id' => 'wallets#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
@@ -23,13 +29,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/wallets' => 'wallets#index'
-  get '/wallets/new' => 'wallets#new'
-  post '/wallets' => 'wallets#create'
-  get '/wallets/:id' => 'wallets#show'
-  get '/wallets/:id/edit' => 'wallets#edit'
-  patch '/wallets/:id' => 'wallets#update'
-  delete '/wallets/:id' => 'wallets#destroy'
+ 
 
 
 

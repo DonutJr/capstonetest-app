@@ -1,38 +1,82 @@
-<%= form_tag "/trades/#{@trade.id}", method: :patch do %>
-  
-  <div>
-    Ticker: 
-    <select name="coin_id" class="form-field-dark">
-      <% @coins.each do |coin| %>
-        <option value="<%= coin.id %>" ><%= coin.ticker %></option>
+<br>
+<br>
+<br>
+<br>
+<h1 class="">New Trade</h1>
+<% if @errors %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@trade.errors.count, "Error") %> prohibited this trade from being entered</h2>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
       <% end %>
-    </select>
+    </ul>
   </div>
-
-  <div>
-    Price: <input type="text" name="execution_price" placeholder="<%= @trade.execution_price %>">
-  </div>
-
- <div>
-    <input id="trade_buy" name="direction" type="radio" value="buy" />
-    <label for="trade_buy">Buy</label>
-    <input id="trade_sell" name="direction" type="radio" value="sell" />
-    <label for="trade_sell">Sell</label>
-  </div>
-
-  <div>
-    Quantity: <input type="text" name="quantity" placeholder="<%= @trade.quantity %>">
-  </div>
-
-  <div>
-    Date: <input type="text" name="timestamp" placeholder="<%= @trade.timestamp %>">
-  </div>
- 
-  <input type="submit" value="Update trade" >
-
-
-
-
-
 <% end %>
 
+<%= form_tag "/trades/#{@trade.id}", method: :patch do %>
+
+  <div class="display-single_element text_input">
+    <form >
+      <div class="form-group row">
+        <label for="example-text-input" class="col-md-2 col-form-label">Ticker</label>
+        <div class="dropdown btn-group"> 
+          <select name="coin_id" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <% @coins.each do |coin| %>
+                <option value="<%= coin.id %>" class="dropdown-menu dropdown-item" ><%= coin.ticker %></option>
+              <% end %>
+            </div>
+          </select>
+        </div>
+      </div> 
+
+      <div class="form-group row">
+        <label for="example-text-input" class="col-md-2 col-form-label">Direction</label>
+          <div>
+            <% if @trade.direction == "buy" %>
+              <input class="radio-custom form-check-input" id="trade_buy" name="direction" type="radio" checked="true" value="buy" />
+              <label class="radio-custom-label form-check-label" for="trade_buy">Buy</label>
+            <% elsif %>
+              <input class="radio-custom form-check-input" id="trade_buy" name="direction" type="radio" value="buy" />
+              <label class="radio-custom-label form-check-label" for="trade_buy">Buy</label>
+            <% end %>
+            <% if @trade.direction == "sell" %>
+              <input class="radio-custom form-check-input" id="trade_sell" name="direction" type="radio" checked="true"  value="sell" />
+              <label class="radio-custom-label form-check-label" for="trade_sell">Sell</label>
+            <% elsif %>
+              <input class="radio-custom form-check-input" id="trade_sell" name="direction" type="radio"  value="sell" />
+              <label class="radio-custom-label form-check-label" for="trade_sell">Sell</label>
+            <% end %>
+          </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="example-text-input" class="col-md-2 col-form-label">Execution Price</label>
+        <div class="col-md-1">
+          <input class="form-control" type="text" name="execution_price" value="<%= @trade.execution_price %>">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="example-text-input" class="col-md-2 col-form-label">Quantity</label>
+        <div class="col-md-1">
+          <input class="form-control" type="text" name="quantity" value="<%= @trade.quantity %>">
+        </div>
+      </div>
+
+      <input class="btn btn-primary" type="submit" value="Update Trade">
+    </form>
+  </div>
+
+  <% end %>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>

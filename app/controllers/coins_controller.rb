@@ -1,24 +1,11 @@
 class CoinsController < ApplicationController
     def index
       @coins = Coin.get_price
+      @eth = Coin.find_by(ticker: "ETH")
+
     end
 
     def show
-      ##FIX THIS  
-      @coinlist = JSON.parse(File.read('coin_list.json'))
-
-      @coinlist.each do |coin|
-        @coins << Coin.new(
-                              {ticker: coin['ticker'],
-                              name: coin['name'],
-                              current_price: @rep,
-                              change: 0,
-                              marketcap: 100,
-                              timestamp: "january"
-                              }
-                          )
-      end
-
-
+      @coin = Coin.find(params[:id])
     end
 end

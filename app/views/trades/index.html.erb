@@ -2,6 +2,109 @@
 <br>
 <br>
 <br>
+
+<div id="tables" class="element_single">
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card single-block">
+      <div class="card-header" role="tab" id="headingOne">            
+        <div class="display-single_element">
+          <h3 style="margin: 30px 0">Position Summary</h3>
+              <table class="table table-inverse">
+                <thead>
+                  <tr>
+                    <th>Coin</th>
+                    <th>Position</th>
+                    <th>Price</th>
+                    <th>Market Value</th>
+                    <th>PnL for Individual Coin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @coins.each do |coin| %>
+                    <% if current_user.trades.any? { |trade| trade.coin_id == coin.id } %>
+                      <tr>
+                        <th scope="row"><%= coin.ticker %></th>
+                        <td><%= current_user.calculate_quantity(coin.id) %></td>
+                        <td><%= coin.current_price %></td>
+                        <td><%= number_to_currency(current_user.calculate_quantity(coin.id) * coin.current_price) %></td>
+                        <td><%= current_user.sum_pnl_coin(coin.id)  %></td>
+                      </tr>
+                     <% end %> 
+                  <% end %>
+                  <tr>
+                        <th scope="row">Totals</th>
+                        <td><%=  %></td>
+                        <td><%=  %></td>
+                        <td><%=  %></td>
+                        <td><%=  current_user.total_pnl %></td>
+                      </tr>
+                </tbody>
+              </table>
+        </div>
+      </div> <!-- element-content ends -->
+    </div>
+  </div> <!-- element main container ends -->
+</div> <!-- Grid wrapper ends -->
+
+
+<div id="tables" class="element_single">
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card single-block">
+      <div class="card-header" role="tab" id="headingOne">            
+        <div class="display-single_element">
+          <h3 style="margin: 30px 0">Individual Trades</h3>
+            <% if current_user %>
+              <%= link_to "Add Trade", "/trades/new", class: "btn btn-primary"  %>
+            <% end %>
+              <table class="table table-inverse">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Coin</th>
+                    <th>Execution Price</th>
+                    <th>Direction</th>
+                    <th>Quantity</th>
+                    <th>Current Price</th>
+                    <th>Current Pnl</th>
+                    <th>Edit / Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @trades.each do |trade| %>
+                    <tr>
+                      <th scope="row"><%= trade.id %></th>
+                      <td><%= trade.coin.ticker %></td>
+                      <td><%= trade.execution_price %></td>
+                      <td><%= trade.direction %></td>
+                      <td><%= trade.quantity %></td>
+                      <td><%= trade.coin.current_price %></td>
+                      <td><%= trade.individual_trade_pnl %></td>
+                      <% if current_user %>
+                        <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                          <%= link_to "edit", "/trades/#{ trade.id }/edit", class: "btn btn-primary btn-rounded" %><%= link_to "delete", "/trades/#{ trade.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
+                          </div>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+        </div>
+      </div> <!-- element-content ends -->
+    </div>
+  </div> <!-- element main container ends -->
+</div> <!-- Grid wrapper ends -->
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
 <h1>Trade History</h1>
 
 <h2>Total PnL: <%= current_user.total_pnl %></h2>

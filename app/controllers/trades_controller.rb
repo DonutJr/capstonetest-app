@@ -8,11 +8,11 @@ class TradesController < ApplicationController
 
 
   def new
-    @coins = Coin.all
+    @coins = Coin.get_price
   end
 
-
   def create
+    @coins = Coin.get_price
     @trade = Trade.new(
                           execution_price: params[:execution_price],
                           quantity: params[:quantity],
@@ -36,7 +36,7 @@ class TradesController < ApplicationController
   end
 
   def edit
-    @coins = Coin.all
+    @coins = Coin.get_price
     @trade = Trade.find(params[:id])
 
   end
@@ -56,7 +56,7 @@ class TradesController < ApplicationController
     @trade.save
     if @trade.save
       flash[:success] = "Trade Successfully Updated"
-      redirect_to "/trades/#{@trade.id}"
+      redirect_to "/trades/"
     else
       @errors = @trade.errors.full_messages
     end
