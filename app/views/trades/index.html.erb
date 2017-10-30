@@ -16,7 +16,7 @@
                     <th>Position</th>
                     <th>Price</th>
                     <th>Market Value</th>
-                    <th>PnL for Individual Coin</th>
+                    <th>Profit / Loss</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -94,57 +94,3 @@
     </div>
   </div> <!-- element main container ends -->
 </div> <!-- Grid wrapper ends -->
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<h1>Trade History</h1>
-
-<h2>Total PnL: <%= current_user.total_pnl %></h2>
-
-<h2>Current Position:</h2>
-<% @coins.each do |coin| %>
-  <% if current_user.trades.any? { |trade| trade.coin_id == coin.id } %>
-      <h3><%= coin.ticker %> Position: <%= current_user.calculate_quantity(coin.id) %> </h3>
-      <h3>Price: <%= coin.current_price %> </h3>
-      <h3>Position value: <%= number_to_currency(current_user.calculate_quantity(coin.id) * coin.current_price) %> </h3>
-      <h3>PnL for Individual coin: <%= current_user.sum_pnl_coin(coin.id)  %> </h3>
-      <br>
-  <% end %>
-<% end %>
-
-
-
-
-
-<h2>Individual Trades</h2>
-<% @trades.each do |trade| %>
-
-<h3>Name: <a href="/trades/<%= trade.id %>"><%= trade.coin.ticker  %></a></h3>
-<h3>Execution Price: <%= trade.execution_price %></h3>
-<h3>Direction: <%= trade.direction %></h3>
-<h3>Quantity: <%= trade.quantity %></h3>
-<h3>Date Executed: <%= trade.timestamp %></h3>
-<h3>PnL for Individual trade: <%= trade.individual_trade_pnl %></h3>
-<br>
-
-
-<% if current_user %>
-  <%= link_to "edit", "/trades/#{ trade.id }/edit", class: "btn " %>
-<% end %>
-
-<% if current_user %>
-  <%= link_to "delete", "/trades/#{ trade.id }", method: :delete, class: "btn " %>
-<% end %>
-
-<% end %>
-
-
-

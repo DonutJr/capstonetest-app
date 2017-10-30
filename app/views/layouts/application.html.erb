@@ -65,7 +65,16 @@
           </div>
         </div>
         <div class="col-sm-3 text-right">
-          <a href="#" class="btn btn-primary btn-default bold" data-morphing id="morphing" data-src="#morphing-content" href="javascript:;">Get a Quote</a>
+          
+
+          <% if current_user %>  
+            <a href="/logout" class="btn btn-primary btn-default bold"  href="javascript:;">Log Out</a>
+          <% else %>
+            <a href="/signup" class="btn btn-primary btn-default bold" href="javascript:;">Sign Up</a>
+            <a href="/login" class="btn btn-primary btn-default bold" href="javascript:;">Login</a>
+          <% end %>
+        
+
         </div>
       </div>
     </div>

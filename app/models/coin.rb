@@ -6,7 +6,7 @@ class Coin < ApplicationRecord
     btc = Unirest.get("https://api.gdax.com/products/BTC-USD/ticker").body['price'].to_f
     all.each do |coin|
       coin.update(current_price: api_data.select{ |token| token["MarketName"] == "BTC-#{coin.ticker}" }[0]["Last"] * btc)
-    end  
+    end
   end
 
   def marketcap

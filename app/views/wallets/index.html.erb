@@ -1,45 +1,55 @@
+<br>
+<br>
+<br>
+<br>
+
+<div id="tables" class="element_single">
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card single-block">
+      <div class="card-header" role="tab" id="headingOne">            
+        <div class="display-single_element">
+          <h3 style="margin: 30px 0">Your Wallets</h3>
+            <%= link_to "Add Wallet", "/wallets/new", class: "btn btn-primary"  %>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Wallet Address</th>
+                    <th>Eth Balance</th>
+                    <th>Eth Position Value</th>
+                    <th>Edit/Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @wallets.each do |wallet| %>
+                    <tr>
+                      <th scope="row"><%=  %></th>
+                      <td><%= wallet.address %></td>
+                      <td><%= wallet.get_eth_balance %></td>
+                      <td><%= wallet.get_eth_balance * @eth.current_price %></td>
+                      <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                          <%= link_to "edit", "/wallets/#{ wallet.id }/edit", class: "btn btn-primary btn-rounded" %><%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
+                          </div>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+        </div>
+      </div> <!-- element-content ends -->
+    </div>
+  </div> <!-- element main container ends -->
+</div> <!-- Grid wrapper ends -->
+
+
+
+
+
+
+
+
 <div id="app">
   
   {{ message }}
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <h3>Total Eth value: <%= current_user.total_eth_portfolio %></h3>
-
-
-  <h2>Your Wallet Addresses: </h2>
-
-  <% @wallets.each do |wallet| %>
-    
-    <h3>Address: <%= wallet.address %></h3>
-
-
-
-    <h3>Eth balance: <%= wallet.get_eth_balance %></h3>
-    <h3>Eth price: <%= @eth.current_price %></h3>
-    <h3>Eth position value: <%= wallet.get_eth_balance * @eth.current_price %></h3>
-
-
- 
-
-
-    
-
-
-      <% if current_user %>
-        <%= link_to "edit", "/wallets/#{ wallet.id }/edit", class: "btn " %>
-      <% end %>
-
-      <% if current_user %>
-        <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn " %>
-      <% end %>
-
-  <% end %>
-
-</div>
-
-
-
-
+  

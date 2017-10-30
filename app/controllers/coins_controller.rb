@@ -1,6 +1,6 @@
 class CoinsController < ApplicationController
     def index
-      @coins = Coin.get_price
+      @coins = Coin.get_price.sort_by { |coin| coin.id }
       @eth = Coin.find_by(ticker: "ETH")
 
     end

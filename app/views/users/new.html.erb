@@ -1,14 +1,29 @@
-<h1>Sign up here, Crypto nerd</h1>
+<br>
+<br>
+<br>
+<br>
 
 <%= form_tag "/users", method: :post do %>
-  <div>
-    Username: <input type="text" name="username">
+  <div class="display-single_element">
+    <h3 class="form_title">Sign Up Form</h3>
+    <form  class="register">
+      <div class="row">
+        <div class="form-group col-md-12 input-icon">
+          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+          <input type="text" name="username" class="form-control" id="uname" aria-describedby="fullName" placeholder="Username">
+        </div>
+        <div class="form-group col-md-12 input-icon">
+          <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group col-md-12 input-icon">
+          <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+          <input type="password" name="password_confirmation" name="password" class="form-control" id="password" placeholder="Password Confirmation">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default btn-primary btn-block">Sign Up</button>
+    </form>
+    <p class="form-footer">Already have an Account? <a href="/login" class="btn-link text-primary">Log in</a></p>
   </div>
-  <div>
-    Password: <input type="password" name="password">
-  </div>
-  <div>
-    Password Confirmation: <input type="password" name="password_confirmation">
-  </div>
-  <input type="submit" value="Sign Up">
 <% end %>
+
