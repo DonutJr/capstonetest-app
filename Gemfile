@@ -32,6 +32,7 @@ gem 'vuejs-rails'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'unirest', '~> 1.1.2'
 gem "figaro"
+gem 'twilio-ruby', '~> 5.4.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
