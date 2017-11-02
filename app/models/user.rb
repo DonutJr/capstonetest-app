@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :trades
   has_many :wallets
+  has_many :alerts
   validates :username, uniqueness: true
 
   def calculate_quantity(arg)

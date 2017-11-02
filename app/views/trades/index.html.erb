@@ -26,7 +26,7 @@
                         <th scope="row"><%= coin.ticker %></th>
                         <td><%= current_user.calculate_quantity(coin.id) %></td>
                         <td><%= coin.current_price %></td>
-                        <td><%= number_to_currency(current_user.calculate_quantity(coin.id) * coin.current_price) %></td>
+                        <td><%= current_user.calculate_quantity(coin.id) * coin.current_price %></td>
                         <td><%= current_user.sum_pnl_coin(coin.id)  %></td>
                       </tr>
                      <% end %> 

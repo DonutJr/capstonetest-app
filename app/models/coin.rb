@@ -1,5 +1,6 @@
 class Coin < ApplicationRecord
   has_many :trades
+  has_many :alerts
 
   def self.get_price
     api_data = Unirest.get("https://bittrex.com/api/v1.1/public/getmarketsummaries").body['result']

@@ -1,0 +1,47 @@
+<br>
+<br>
+<br>
+<br>
+
+<div id="tables" class="element_single">
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card single-block">
+      <div class="card-header" role="tab" id="headingOne">            
+        <div class="display-single_element">
+          <h3 style="margin: 30px 0">Alerts</h3>
+            <% if current_user %>
+              <%= link_to "Add Alert", "/alerts/new", class: "btn btn-primary"  %>
+            <% end %>
+              <table class="table table-inverse">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Coin</th>
+                    <th>Trigger Price</th>
+                    <th>Current Price</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @alerts.each do |alert| %>
+                    <tr>
+                      <th scope="row"><%= alert.id %></th>
+                      <td><%= alert.coin.ticker %></td>
+                      <td><%= alert.price %></td>
+                      <td><%= alert.coin.current_price %></td>
+
+                      <% if current_user %>
+                        <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                          <%= link_to "delete", "/alerts/#{ alert.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
+                          </div>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+        </div>
+      </div> <!-- element-content ends -->
+    </div>
+  </div> <!-- element main container ends -->
+</div> <!-- Grid wrapper ends -->

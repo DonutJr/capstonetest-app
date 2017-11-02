@@ -22,6 +22,14 @@ Rails.application.routes.draw do
   patch '/wallets/:id' => 'wallets#update'
   delete '/wallets/:id' => 'wallets#destroy'
 
+  get '/alerts' => 'alerts#index'
+  get '/alerts/new' => 'alerts#new'
+  post '/alerts' => 'alerts#create'
+  get '/alerts/:id' => 'alerts#show'
+  get '/alerts/:id/edit' => 'alerts#edit'
+  patch '/alerts/:id' => 'alerts#update'
+  delete '/alerts/:id' => 'alerts#destroy'
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
