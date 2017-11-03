@@ -2,6 +2,8 @@
 <br>
 <br>
 <br>
+
+
 <h1 class="">New Alert</h1>
 <% if @errors %>
   <div id="error_explanation">
@@ -13,6 +15,8 @@
     </ul>
   </div>
 <% end %>
+
+
 
 <%= form_tag "/alerts", method: :post do %>
 
@@ -33,10 +37,15 @@
 
       <div class="form-group row">
         <label for="example-text-input" class="col-md-2 col-form-label">
-        Current Price: <%=  %>
+        Current Price:
         </label>
+        <div class="col-md-1">
+          <input class="form-control" type="text" name="current_price">
+        </div>
       </div>
 
+
+   
 
       <div class="form-group row">
         <label for="example-text-input" class="col-md-2 col-form-label">Alert Price</label>
@@ -45,12 +54,12 @@
         </div>
       </div>
 
-      <input type="hidden" name="current_price" value="" />
-
 
       <input class="btn btn-primary" type="submit" value="Add Alert">
     </form>
   </div>
 
   <% end %>
+
+
 

@@ -19,6 +19,7 @@
                     <th>Coin</th>
                     <th>Trigger Price</th>
                     <th>Current Price</th>
+                    <th>Triggered?</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
@@ -29,7 +30,7 @@
                       <td><%= alert.coin.ticker %></td>
                       <td><%= alert.price %></td>
                       <td><%= alert.coin.current_price %></td>
-
+                      <td><%= alert.triggered %></td>
                       <% if current_user %>
                         <td>
                           <div class="btn-group" role="group" aria-label="Basic example">

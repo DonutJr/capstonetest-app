@@ -18,7 +18,7 @@ class AlertsController < ApplicationController
                           user_id: current_user.id
                           )
     if @alert.save
-      flash[:success] = "ALert Successfully Entered"
+      flash[:success] = "Alert Successfully Entered"
       redirect_to "/alerts/"
     else
       

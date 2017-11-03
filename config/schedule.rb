@@ -9,5 +9,5 @@
 
 
 every 1.minute do
-  runner "Alert.new.text_alert"
+  runner "Alert.text_alert"
 end
