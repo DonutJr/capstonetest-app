@@ -3,7 +3,9 @@ class WalletsController < ApplicationController
 
   def index
     @coins = Coin.get_price
-    @wallets = Wallet.all
+    if current_user
+      @wallets = Wallet.where(user_id: current_user)
+    end
     @eth = Coin.find_by(ticker: "ETH")
   end
 
@@ -25,9 +27,7 @@ class WalletsController < ApplicationController
     end
   end
 
-  def show
-    @wallet = Wallet.find(params[:id])
-  end
+  
 
   def edit
     @wallet = Wallet.find(params[:id])

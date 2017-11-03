@@ -3,7 +3,10 @@ class TradesController < ApplicationController
 
   def index
     @coins = Coin.get_price
-    @trades = Trade.all
+
+    if current_user
+      @trades = Trade.where(user_id: current_user.id)
+    end
   end
 
 
@@ -29,10 +32,6 @@ class TradesController < ApplicationController
       @errors = @trade.errors.full_messages
       render "new.html.erb"
     end
-  end
-
-  def show
-    @trade = Trade.find(params[:id])
   end
 
   def edit

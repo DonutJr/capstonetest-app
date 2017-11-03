@@ -10,7 +10,7 @@
         <div class="display-single_element">
           <h3 style="margin: 30px 0">Your Wallets</h3>
             <%= link_to "Add Wallet", "/wallets/new", class: "btn btn-primary"  %>
-            <table class="table">
+            <table class="table table-inverse">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -29,7 +29,7 @@
                       <td><%= wallet.get_eth_balance * @eth.current_price %></td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                          <%= link_to "edit", "/wallets/#{ wallet.id }/edit", class: "btn btn-primary btn-rounded" %><%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
+                          <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
                           </div>
                     </tr>
                   <% end %>

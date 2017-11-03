@@ -7,7 +7,8 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 
+set :environment, "development"
 
 every 1.minute do
-  runner "Alert.text_alert"
+  runner "Ping.text_alert"
 end

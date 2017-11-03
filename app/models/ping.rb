@@ -1,12 +1,14 @@
-class Alert < ApplicationRecord
+class Ping < ApplicationRecord
   belongs_to :user
   belongs_to :coin
 
-
+  validates :price, presence: true
+  validates :current_price, presence: true
+  
 
   def self.text_alert
       #how do i check to see if this only pulls specific user alerts?
-      @alerts = Alert.where(triggered: nil)
+      @alerts = Ping.where(triggered: nil)
       @coins = Coin.get_price
       @eth = Coin.find_by(ticker: "ETH")
 
