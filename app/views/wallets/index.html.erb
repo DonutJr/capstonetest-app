@@ -1,7 +1,14 @@
+
+
+
 <br>
 <br>
 <br>
 <br>
+<% @wallets.each do |wallet| %>
+    <h4><div id="wallet_<%= wallet.id %>" class="wallets"><%= wallet.address %></div></h4>
+                        <h4><div id="wallet_<%= wallet.id %>omg"></div></h4>
+<% end %>
 
 <div id="tables" class="element_single">
   <div id="accordion" role="tablist" aria-multiselectable="true">
@@ -22,16 +29,18 @@
                 </thead>
                 <tbody>
                   <% @wallets.each do |wallet| %>
-                    <tr>
-                      <th scope="row"><%=  %></th>
-                      <td><%= wallet.address %></td>
-                      <td><%= wallet.get_eth_balance %></td>
-                      <td><%= wallet.get_eth_balance * @eth.current_price %></td>
-                      <td>
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                          <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
-                          </div>
-                    </tr>
+
+                      <tr>
+                        <th scope="row"><%=  %></th>
+                        <td><div id="wallet_<%= wallet.id %>" class="wallets"><%= wallet.address %></div></td>
+                        <td><div id="wallet_<%= wallet.id %>output"></div></td>
+                        <td><%= wallet.get_eth_balance * @eth.current_price %></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                            <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
+                            </div>
+                      </tr>
+
                   <% end %>
                 </tbody>
               </table>
@@ -40,5 +49,10 @@
     </div>
   </div> <!-- element main container ends -->
 </div> <!-- Grid wrapper ends -->
+
+
+<script>getBalance()</script>
+<script>getTokenBalance()</script>
+
 
   

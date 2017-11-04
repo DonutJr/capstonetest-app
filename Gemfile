@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'vuejs-rails'
 
+gem 'record_tag_helper', '~> 1.0'
+
 
 gem 'jquery-rails', '~> 4.3.1'
 gem 'unirest', '~> 1.1.2'
