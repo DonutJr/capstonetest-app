@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post '/wallets' => 'wallets#create'
   delete '/wallets/:id' => 'wallets#destroy'
   get '/wallettest' => 'wallets#wallettest'
+  get '/wallettest2' => 'wallets#wallettest2'
+  get '/wallettest3' => 'wallets#wallettest3'
+
 
   get '/alerts' => 'pings#index'
   get '/alerts/new' => 'pings#new'
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  patch '/users/:id' => 'users#update'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

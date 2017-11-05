@@ -2,11 +2,10 @@ class WalletsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @coins = Coin.get_price
+    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
     if current_user
       @wallets = Wallet.where(user_id: current_user)
     end
-    @eth = Coin.find_by(ticker: "ETH")
   end
 
   def new
@@ -57,6 +56,24 @@ class WalletsController < ApplicationController
   end
 
   def wallettest
+
+    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
+    if current_user
+      @wallets = Wallet.where(user_id: current_user)
+    end
+
+  end
+
+  def wallettest2
+
+    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
+    if current_user
+      @wallets = Wallet.where(user_id: current_user)
+    end
+
+  end
+
+  def wallettest3
 
     @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
     if current_user

@@ -2,6 +2,26 @@
 <br>
 <br>
 <br>
+<%= form_tag "/users/#{current_user.id}", method: :patch do %>
+   <div class="display-single_element text_input">
+    <form >
+      
+
+      <div class="form-group row">
+        <label for="example-text-input" class="col-md-2 col-form-label">
+        Phone Number
+        </label>
+        <div class="col-md-2">
+          <input class="form-control" type="text" name="phone_number">
+        </div>
+      </div>
+
+      <input class="btn btn-primary marginslol" type="submit" value="Add Phone Number">
+    </form>
+  </div>
+
+<% end %>
+
 
 <div id="tables" class="element_single">
   <div id="accordion" role="tablist" aria-multiselectable="true">

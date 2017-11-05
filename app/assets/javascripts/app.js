@@ -1,56 +1,42 @@
-// /* global Vue */
-// document.addEventListener("DOMContentLoaded", function(event) { 
-//   var vm = new Vue({
-//     el: '#app',
-//     data: {
-//       message: "hey Vue",
-//       selected: "",
-//       testprice: "",
-//       testing: ""
+/* global Vue */
+document.addEventListener("DOMContentLoaded", function(event) { 
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      // seen: false
+  
 
-//     },
+    },
 
-//     mounted: function() {
+    mounted: function() {
 
-//     },
+    },
 
-//     created: function() {
-//       console.log('a is: ' + this.reviews)
-//     },
+    methods: {
+      // toggleWallet: function(arg) {
+      //   var lst = document.getElementsByClassName(arg);
+      //   var i = 0;
+      //   for (let row of lst) {
+      //       if (row.innerHTML !== "") {
+      //           $('.hiderow_'+ lst[i].id).show();
+      //       }
+      //       i++;
+      //   }
+      // }
+      // var lst = document.getElementsByClassName(arg + "_zero");
+      // var i = 0;
+      //     for (let row of lst) {
+      //         if (row.innerHTML !== "") {
+      //             $('.hiderow_'+ lst[i].id).show();
+      //         }
+      //         i++;
+      //     }   
 
-//     methods: {
-//       changeTitle: function() {
-//         this.message = data;
-//       },
-//       addReview: function() {
-//         var newReview = {
-//                           text: this.newReviewText,
-//                           name: this.newReviewName,
-//                           rating: this.newReviewRating
-//                         };
-//         this.reviews.push(newReview);
-//         this.newReviewText = "";
-//         this.newReviewName = "";
-//         this.newReviewRating = "";
-//       },
+    },
 
-//       showPrice: function() {
-//         var testing = this.selected;
+    computed: {
 
-        
-//         console.log(Object.getOwnPropertyNames(testprice));
-//         console.log(testprice["10"]);
-//         this.testprice = "";
-        
-//       }
+    }
+  });
 
-//     },
-
-
-    
-//     computed: {
-
-//     }
-//   });
-
-// });
+});

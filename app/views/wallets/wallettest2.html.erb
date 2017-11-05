@@ -2,7 +2,7 @@
 
 
 
-
+<div id="app">
 
 
 <div id="tables" class="element_single">
@@ -28,26 +28,23 @@
                   <% @wallets.each do |wallet| %>
                       
 
-                      <tr onclick="toggleWallet('wallet_'+<%= wallet.id %>)">
+                      <tr v-on:click="seen = !seen">
                         <th scope="row"><%=  %></th>
-                        <td><div class="wallets" id="wallet_<%= wallet.id %>"><%= wallet.address %></div></td>
+                        <td><div id="wallet_<%= wallet.id %>" class="wallets"><%= wallet.address %></div></td>
                         <td><div id="wallet_<%= wallet.id %>_eth"></div></td>
                         <td>Coin's position value</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                            <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
-                            </div>
+                        <td>Edit/Delete</td>
                       </tr>
 
 
 
 
                           <% @coins.each do |coin| %>
-                            <tr class="hiding wallet_<%= wallet.id %>_zero wallet_<%= wallet.id %>_<%= coin.ticker %>_new">
+                            <tr class="hiderow_wallet_<%= wallet.id %>_<%= coin.ticker %>" v-if="seen">
                               <th scope="row"><%=  %></th>
                               <td></td>
-                              <td><div class="wallet_<%= wallet.id %>_zerobalance" id="wallet_<%= wallet.id %>_<%= coin.ticker %>" ></div></td>
-                              <td></td>
+                              <td><div id="wallet_<%= wallet.id %>_<%= coin.ticker %>" class="zerobalance"></div></td>
+                              <td>Coin position value</td>
                             </tr>
                           <% end %>
 
@@ -60,7 +57,7 @@
   </div> <!-- element main container ends -->
 </div> <!-- Grid wrapper ends -->
 
-
+</div>
 
 
 <script>getBalance()</script>

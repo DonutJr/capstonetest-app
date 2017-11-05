@@ -12,6 +12,8 @@
         <div class="display-single_element">
           <h3 style="margin: 30px 0">Your Wallets</h3>
             <%= link_to "Add Wallet", "/wallets/new", class: "btn btn-primary"  %>
+            
+
             <table class="table table-inverse">
                 <thead>
                   <tr>
@@ -24,6 +26,8 @@
                 </thead>
                 <tbody>
                   <% @wallets.each do |wallet| %>
+                      
+
                       <tr>
                         <th scope="row"><%=  %></th>
                         <td><div id="wallet_<%= wallet.id %>" class="wallets"><%= wallet.address %></div></td>
@@ -31,14 +35,19 @@
                         <td>Coin's position value</td>
                         <td>Edit/Delete</td>
                       </tr>
-                      <% @coins.each do |coin| %>
-                        <tr class="hiderow_wallet_<%= wallet.id %>_<%= coin.ticker %>">
-                          <th scope="row"><%=  %></th>
-                          <td></td>
-                          <td><div id="wallet_<%= wallet.id %>_<%= coin.ticker %>" class="zerobalance"></div></td>
-                          <td>Coin position value</td>
-                        </tr>
-                      <% end %>
+
+
+
+
+                          <% @coins.each do |coin| %>
+                            <tr class="hiderow_wallet_<%= wallet.id %>_<%= coin.ticker %>">
+                              <th scope="row"><%=  %></th>
+                              <td></td>
+                              <td><div id="wallet_<%= wallet.id %>_<%= coin.ticker %>" class="zerobalance"></div></td>
+                              <td>Coin position value</td>
+                            </tr>
+                          <% end %>
+
                   <% end %>
                 </tbody>
               </table>

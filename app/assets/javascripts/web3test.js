@@ -8,7 +8,7 @@ function getBalance() {
         try {
             var wei = web3.eth.getBalance(wallets[i].innerHTML);
             var balance = web3.fromWei(wei, 'ether');
-            document.getElementById(wallets[i].id + "_eth").innerHTML = balance + "ETH";
+            document.getElementById(wallets[i].id + "_eth").innerHTML = balance + " ETH";
         }
         catch (err) {
             document.getElementById(wallets[i] + "_eth").innerHTML = err.message;
