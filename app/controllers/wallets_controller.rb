@@ -55,4 +55,13 @@ class WalletsController < ApplicationController
     wallet.destroy
     redirect_to "/wallets"
   end
+
+  def wallettest
+
+    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
+    if current_user
+      @wallets = Wallet.where(user_id: current_user)
+    end
+
+  end
 end

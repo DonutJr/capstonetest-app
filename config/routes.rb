@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/wallets/new' => 'wallets#new'
   post '/wallets' => 'wallets#create'
   delete '/wallets/:id' => 'wallets#destroy'
+  get '/wallettest' => 'wallets#wallettest'
 
   get '/alerts' => 'pings#index'
   get '/alerts/new' => 'pings#new'

@@ -93,7 +93,6 @@ function padTokens(s, n) {
 function getTokenBalance() {
     var i = 0;
     var wallets = document.getElementsByClassName('wallets');
-    console.log(wallets);
     for (let tok of token_list) {
         var coin = web3.eth.contract(tok[Object.keys(tok)][1]).at(tok[Object.keys(tok)][0]);
         var cointotal = 0;
@@ -101,33 +100,35 @@ function getTokenBalance() {
         for (i = 0; i < wallets.length; i++) {
             var tokens = coin.balanceOf(wallets[i].innerHTML) / parseFloat(1e16);
             cointotal = parseFloat(tokens);
-            // document.getElementById(wallets[i].id + Object.keys(tok)).innerHTML = cointotal;
-            console.log(cointotal + Object.keys(tok));
+            if (cointotal > 0) {
+                document.getElementById(wallets[i].id + "_" + Object.keys(tok)).innerHTML = cointotal + " " +Object.keys(tok);
+            }
+            
+            // console.log(cointotal + Object.keys(tok));
         }
     }
-    // var omgaddress = "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07";
-    // var omg = web3.eth.contract(omgabi).at(omgaddress);
-    // var omgtotal = 0;
-    // var i =0; 
-    // var wallets = document.getElementsByClassName('wallets');
-    // for (i = 0; i < wallets.length; i++) {
-    //     var tokens = omg.balanceOf(wallets[i].innerHTML) / parseFloat(1e16);
-    //     omgtotal = parseFloat(tokens);
-    //     document.getElementById(wallets[i].id + "omg").innerHTML = omgtotal + "omg"
-    // }  
+
+
 }
 
-// var wallets = document.getElementsByClassName('wallets');
-    // for (i = 0; i < wallets.length; i++) {
-    //     try {
-    //         var wei = web3.eth.getBalance(wallets[i].innerHTML);
-    //         var balance = web3.fromWei(wei, 'ether');
-    //         document.getElementById(wallets[i].id + "omg").innerHTML = balance + "ETH";
-    //     }
-    //     catch (err) {
-    //         document.getElementById(wallets[i] + "omg").innerHTML = err.message;
+function removeZeroBalance(){
+    // var lst = document.getElementsByClassName('zerobalance');
+    // for(var i = 0; i < lst.length; ++i) {
+    //     if (lst[i].innerHTML === "") {
+    //         lst[i].style.display = "none";
     //     }
     // }
+    var lst = document.getElementsByClassName('zerobalance');
+    var i = 0;
+    for (let row of lst) {
+        if (row.innerHTML === "") {
+            $('.hiderow_'+ lst[i].id).hide();
+        }
+        i++;
+    }
+    
+}
+
 
 
 

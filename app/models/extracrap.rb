@@ -43,3 +43,26 @@
   #   <td><%= wallet.address %></td>
   # <% end %>
 
+  # // var wallets = document.getElementsByClassName('wallets');
+  #   // for (i = 0; i < wallets.length; i++) {
+  #   //     try {
+  #   //         var wei = web3.eth.getBalance(wallets[i].innerHTML);
+  #   //         var balance = web3.fromWei(wei, 'ether');
+  #   //         document.getElementById(wallets[i].id + "omg").innerHTML = balance + "ETH";
+  #   //     }
+  #   //     catch (err) {
+  #   //         document.getElementById(wallets[i] + "omg").innerHTML = err.message;
+  #   //     }
+  #   // 
+
+   # // var omgaddress = "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07";
+   #  // var omg = web3.eth.contract(omgabi).at(omgaddress);
+   #  // var omgtotal = 0;
+   #  // var i =0; 
+   #  // var wallets = document.getElementsByClassName('wallets');
+   #  // for (i = 0; i < wallets.length; i++) {
+   #  //     var tokens = omg.balanceOf(wallets[i].innerHTML) / parseFloat(1e16);
+   #  //     omgtotal = parseFloat(tokens);
+   #  //     document.getElementById(wallets[i].id + "omg").innerHTML = omgtotal + "omg"
+   #  // }  
+
