@@ -22,8 +22,6 @@
                 </thead>
                 <tbody>
                   <% @wallets.each_with_index do |wallet, i| %>
-                      
-
                       <tr v-on:click="toggleBalances(<%= i %>)">
                         <td><div class="address" ><%= wallet.address %></div></td>
                         <td v-text="ethers[<%= i %>]"></td>
@@ -33,17 +31,13 @@
                             <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
                             </div>
                       </tr>
-
-                          <% @coins.each_with_index do |coin, j| %>
-                            <tr v-if="seen['<%= i %><%= coin.ticker %>']" >
-                              <td></td>
-                              <td  v-text="cointotal['<%= i %><%= coin.ticker %>']" ></td>
-                              <td></td>
-                            </tr>
-                          <% end %>
-
-                          
-
+                    <% @coins.each_with_index do |coin, j| %>
+                      <tr v-if="seen['<%= i %><%= coin.ticker %>']" >
+                        <td></td>
+                        <td  v-text="cointotal['<%= i %><%= coin.ticker %>']" ></td>
+                        <td></td>
+                      </tr>
+                    <% end %>
                   <% end %>
                 </tbody>
               </table>

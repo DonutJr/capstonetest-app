@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     mounted() {
       this.getEtherBalance();
       this.getSubtokenBalances();
-      // this.initHide();
     },
 
     methods: {
@@ -33,11 +32,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             var coin = web3.eth.contract(token[Object.keys(token)][1]).at(token[Object.keys(token)][0]);
             var balance = coin.balanceOf(address.innerHTML) / parseFloat(1e16);
             if (balance > 0) {
-              // this.cointotal[i] = parseFloat(balance) + ' ' + Object.keys(token);
               Vue.set(this.cointotal, i+Object.keys(token), parseFloat(balance) + ' ' + Object.keys(token));
             }
           }
-            i++;
+          i++;
         }
       },
 
@@ -45,32 +43,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var i = 0;
         for (let token of token_list) {
           if (this.cointotal[arg+Object.keys(token)]){
-
-          Vue.set(this.seen, [arg+Object.keys(token)], !this.seen[arg+Object.keys(token)]  );
+            Vue.set(this.seen, [arg+Object.keys(token)], !this.seen[arg+Object.keys(token)]);
           }
-          // this.seen[arg+Object.keys(token)] = !this.seen[arg+Object.keys(token)];
-
           i++;
         }
       },
-
-      initHide () {
-        // var i = 0;
-        // var j = 0;
-        // for (let address of this.addresses) {
-        //   for (let token of token_list) {
-        //     this.seen[j + Object.keys(token)] = false;
-        //     i++;
-        //   }
-        //   j++;
-        // }
-
-
-      }
-
     }
-
-
 
   });
 });
