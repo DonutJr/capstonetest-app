@@ -1,32 +1,3 @@
-# Coin.create!([
-#                   {ticker: "ETH", name: "Ether", current_price: 300, change: 0, marketcap:28537967, timestamp:"10-1-2017"},
-#                   {ticker: "REP", name: "Augur", current_price: 20, change: 0, marketcap: 200000, timestamp:"10-1-2017"},
-#                   {ticker: "DGD", name: "Digix", current_price: 80, change: 0, marketcap:160000, timestamp:"10-1-2017"},
-#                   {ticker: "OMG", name: "Omise", current_price: 10, change: 0, marketcap:1000000, timestamp:"10-1-2017"},   
-#             ])
-
- # {"OMG": "",
- #     "PAY": "0xB97048628DB6B661D4C2aA833e95Dbe1A905B280",
- #     "REP": ,
- #     "GNT": ,
- #     "BAT": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
- #     "KNC": "0xdd974d5c2e2928dea5f71b9825b8b646686bd200",
- #     "MTL": "0xF433089366899D83a9f26A773D59ec7eCF30355e",
- #     "DGD": ,
- #     "ICN": "0x888666CA69E0f178DED6D75b5726Cee99A87D698",
- #     "ZRX": "0xe41d2489571d322189246dafa5ebde1f4699f498",
- #     "SNT": "0x744d70fdbe2ba4cf95131626614a1763df805b9e",
- #     "FUN": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
- #     "SNGLS": "0xaec2e87e0a235266d9c5adc9deb4b2e29b54d009",
- #     "GNO": "0x6810e776880c02933d47db1b9fc05908e5386b96",
- #     "BNT": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
- #     "ANT": "0x960b236A07cf122663c4303350609A66A7B288C0",
- #     "MLN": "0xBEB9eF514a379B997e0798FDcC901Ee474B6D9A1",
- #     "STORJ": "0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac",
- #     "CFI": "0x12fef5e57bf45873cd9b62e9dbd7bfb99e32d73e",
- #     "TRST": "0xcb94be6f13a1182e4a4b6140cb7bf2025d28e41b",
- #     "DNT": "0x0abdace70d3790235af448c88547603b945604ea"}
-
 Coin.create!([
 
               {"ticker": "ETH",
@@ -51,12 +22,7 @@ Coin.create!([
               {"ticker": "BAT",
                 "name": "Basic Attention Token",
                 "supply": "1500000000",
-                "contract_address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef" }
-            ])
-
-
-Coin.create!([
-
+                "contract_address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef" },
               {"ticker": "PAY",
                 "name": "TenX",
                 "supply": "205218256",
@@ -114,6 +80,4 @@ Coin.create!([
                 "name": "District0x",
                 "supply": "1000000000",
                 "contract_address": "0x0abdace70d3790235af448c88547603b945604ea" }
-        
-
             ])

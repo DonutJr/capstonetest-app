@@ -30,7 +30,6 @@ function padTokens(s, n) {
   return o;
 }
 
-
 function getTokenBalance() {
     var i = 0;
     var wallets = document.getElementsByClassName('wallets');
@@ -58,45 +57,12 @@ function toggleWallet(arg) {
             }
             i++;
         }   
-
 }
 
 function removeZeroBalance() {
     $('.hiding').hide();
 }
-    // var lst = document.getElementsByClassName('zerobalance');
-    // var i = 0;
-    // for (let row of lst) {
-    //     if (row.innerHTML !== "") {
-    //         $('.hiderow_'+ lst[i].id).show();
-    //     }
-        // i++;
-    // }   
 
-    // var lst = document.getElementsByClassName('zerobalance');
-    // for(var i = 0; i < lst.length; ++i) {
-    //     if (lst[i].innerHTML === "") {
-    //         lst[i].style.display = "none";
-    //     }
-    // }
-
-
-    // var lst = document.getElementsByClassName('zerobalance');
-    // var i = 0;
-    // for (let row of lst) {
-    //     if (row.innerHTML === "") {
-    //         $('.hiderow_'+ lst[i].id).hide();
-    //     }
-    //     i++;
-    // }   
-
-
-// function headerTest() {
-//     $('table tr:not(.header)').hide();
-//     $('.header').click(function() {
-//         $(this).nextUntil('tr.header').slideToggle(300);
-//     });
-// }
 
 
 

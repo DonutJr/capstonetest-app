@@ -3,7 +3,7 @@
 
 
 
-
+<p id="nodeapi"></p>
 
 <div id="tables" class="element_single">
   <div id="accordion" role="tablist" aria-multiselectable="true">
@@ -13,7 +13,6 @@
           <h3 style="margin: 30px 0">Your Wallets</h3>
             <%= link_to "Add Wallet", "/wallets/new", class: "btn btn-primary"  %>
             
-
             <table class="table table-inverse">
                 <thead>
                   <tr>
@@ -38,9 +37,6 @@
                             <%= link_to "delete", "/wallets/#{ wallet.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
                             </div>
                       </tr>
-
-
-
 
                           <% @coins.each do |coin| %>
                             <tr class="hiding wallet_<%= wallet.id %>_zero wallet_<%= wallet.id %>_<%= coin.ticker %>_new">

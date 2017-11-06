@@ -1,3 +1,8 @@
+# def get_eth_balance
+  #   Unirest.get("https://api.etherscan.io/api?module=account&action=balance&address=#{address}&tag=latest").body['result'].to_f / 1000000000000000000
+  # end
+
+
 # def token_balance(token)
     # token_list =
     # {"OMG": "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07",

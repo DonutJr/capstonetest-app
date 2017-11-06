@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   delete '/wallets/:id' => 'wallets#destroy'
   get '/wallettest' => 'wallets#wallettest'
   get '/wallettest2' => 'wallets#wallettest2'
-  get '/wallettest3' => 'wallets#wallettest3'
+  get '/wallettest4' => 'wallets#wallettest4'
 
 
   get '/alerts' => 'pings#index'

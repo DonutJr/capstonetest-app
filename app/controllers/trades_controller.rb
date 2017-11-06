@@ -9,7 +9,6 @@ class TradesController < ApplicationController
     end
   end
 
-
   def new
     @coins = Coin.get_price
   end
@@ -59,9 +58,6 @@ class TradesController < ApplicationController
     else
       @errors = @trade.errors.full_messages
     end
-
-    p @trade.errors.full_messages
-    # redirect_to "/trades"
   end
 
   def destroy

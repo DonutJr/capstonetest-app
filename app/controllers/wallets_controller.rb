@@ -5,6 +5,10 @@ class WalletsController < ApplicationController
     @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
     if current_user
       @wallets = Wallet.where(user_id: current_user)
+      render json: {
+        wallets: @wallets.as_json,
+        coins: @coins.as_json
+      }
     end
   end
 
@@ -55,25 +59,7 @@ class WalletsController < ApplicationController
     redirect_to "/wallets"
   end
 
-  def wallettest
-
-    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
-    if current_user
-      @wallets = Wallet.where(user_id: current_user)
-    end
-
-  end
-
-  def wallettest2
-
-    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
-    if current_user
-      @wallets = Wallet.where(user_id: current_user)
-    end
-
-  end
-
-  def wallettest3
+  def wallettest4
 
     @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
     if current_user

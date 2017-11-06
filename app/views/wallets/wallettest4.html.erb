@@ -1,9 +1,7 @@
 <br> <br> <br> <br>
 
 
-
-
-
+<div id="app">
 
 <div id="tables" class="element_single">
   <div id="accordion" role="tablist" aria-multiselectable="true">
@@ -13,11 +11,9 @@
           <h3 style="margin: 30px 0">Your Wallets</h3>
             <%= link_to "Add Wallet", "/wallets/new", class: "btn btn-primary"  %>
             
-
             <table class="table table-inverse">
                 <thead>
                   <tr>
-                    <th>#</th>
                     <th>Wallet Address</th>
                     <th>Balance</th>
                     <th>Position Value</th>
@@ -25,13 +21,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% @wallets.each do |wallet| %>
+                  <% @wallets.each_with_index do |wallet, i| %>
                       
 
-                      <tr onclick="toggleWallet('wallet_'+<%= wallet.id %>)">
-                        <th scope="row"><%=  %></th>
-                        <td><div class="wallets" id="wallet_<%= wallet.id %>"><%= wallet.address %></div></td>
-                        <td><div id="wallet_<%= wallet.id %>_eth"></div></td>
+                      <tr v-on:click="toggleBalances(<%= i %>)">
+                        <td><div class="address" ><%= wallet.address %></div></td>
+                        <td v-text="ethers[<%= i %>]"></td>
                         <td>Coin's position value</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -39,17 +34,15 @@
                             </div>
                       </tr>
 
-
-
-
-                          <% @coins.each do |coin| %>
-                            <tr class="hiding wallet_<%= wallet.id %>_zero wallet_<%= wallet.id %>_<%= coin.ticker %>_new">
-                              <th scope="row"><%=  %></th>
+                          <% @coins.each_with_index do |coin, j| %>
+                            <tr v-if="seen['<%= i %><%= coin.ticker %>']" >
                               <td></td>
-                              <td><div class="wallet_<%= wallet.id %>_zerobalance" id="wallet_<%= wallet.id %>_<%= coin.ticker %>" ></div></td>
+                              <td  v-text="cointotal[<%= j + i * @coins.length %>]" ></td>
                               <td></td>
                             </tr>
                           <% end %>
+
+                          
 
                   <% end %>
                 </tbody>
@@ -60,12 +53,8 @@
   </div> <!-- element main container ends -->
 </div> <!-- Grid wrapper ends -->
 
+</div>
 
-
-
-<script>getBalance()</script>
-<script>getTokenBalance()</script>
-<script>removeZeroBalance()</script>
 
 
 
