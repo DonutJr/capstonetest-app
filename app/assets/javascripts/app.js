@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       addresses: document.getElementsByClassName('address'),
       ethers: [],
-      cointotal: [],
+      cointotal: {},
       seen: {}
     },
 
@@ -33,10 +33,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
             var coin = web3.eth.contract(token[Object.keys(token)][1]).at(token[Object.keys(token)][0]);
             var balance = coin.balanceOf(address.innerHTML) / parseFloat(1e16);
             if (balance > 0) {
-              this.cointotal[i] = parseFloat(balance) + ' ' + Object.keys(token);
+              // this.cointotal[i] = parseFloat(balance) + ' ' + Object.keys(token);
+              Vue.set(this.cointotal, i+Object.keys(token), parseFloat(balance) + ' ' + Object.keys(token));
             }
-            i++;
           }
+            i++;
+        }
+      },
+
+      toggleBalances(arg) {
+        var i = 0;
+        for (let token of token_list) {
+          if (this.cointotal[arg+Object.keys(token)]){
+
+          Vue.set(this.seen, [arg+Object.keys(token)], !this.seen[arg+Object.keys(token)]  );
+          }
+          // this.seen[arg+Object.keys(token)] = !this.seen[arg+Object.keys(token)];
+
+          i++;
         }
       },
 
@@ -52,17 +66,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // }
 
 
-      },
-
-      toggleBalances(arg) {
-        var i = 0;
-        for (let token of token_list) {
-          Vue.set(this.seen, [arg+Object.keys(token)], !this.seen[arg+Object.keys(token)]  );
-          // this.seen[arg+Object.keys(token)] = !this.seen[arg+Object.keys(token)];
-
-          i++;
-        }
       }
+
     }
 
 

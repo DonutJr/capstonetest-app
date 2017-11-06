@@ -37,7 +37,7 @@
                           <% @coins.each_with_index do |coin, j| %>
                             <tr v-if="seen['<%= i %><%= coin.ticker %>']" >
                               <td></td>
-                              <td  v-text="cointotal[<%= j + i * @coins.length %>]" ></td>
+                              <td  v-text="cointotal['<%= i %><%= coin.ticker %>']" ></td>
                               <td></td>
                             </tr>
                           <% end %>
