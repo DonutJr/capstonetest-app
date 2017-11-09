@@ -16,9 +16,12 @@ Rails.application.routes.draw do
   get '/wallets/new' => 'wallets#new'
   post '/wallets' => 'wallets#create'
   delete '/wallets/:id' => 'wallets#destroy'
-  get '/wallettest' => 'wallets#wallettest'
-  get '/wallettest2' => 'wallets#wallettest2'
+  # get '/wallettest' => 'wallets#wallettest'
+  # get '/wallettest2' => 'wallets#wallettest2'
   get '/wallettest4' => 'wallets#wallettest4'
+  get '/wallettest5' => 'wallets#wallettest5'
+  get '/vue-index', to: 'wallets#vue_index'
+
 
 
   get '/alerts' => 'pings#index'

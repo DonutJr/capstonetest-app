@@ -2,7 +2,8 @@ class WalletsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
+    # @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
+    @coins = Coin.get_price.sort_by { |coin| coin.id }
     if current_user
       @wallets = Wallet.where(user_id: current_user)
       render json: {
@@ -10,6 +11,9 @@ class WalletsController < ApplicationController
         coins: @coins.as_json
       }
     end
+  end
+
+  def vue_index
   end
 
   def new
@@ -59,7 +63,7 @@ class WalletsController < ApplicationController
     redirect_to "/wallets"
   end
 
-  def wallettest4
+  def wallettest5
 
     @coins = Coin.where.not(id: 1).get_price.sort_by { |coin| coin.id }
     if current_user
