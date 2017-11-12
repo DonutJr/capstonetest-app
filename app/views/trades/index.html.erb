@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<div id="tables" class="element_single">
+<div id="tables" class="element_single container">
   <div id="accordion" role="tablist" aria-multiselectable="true">
     <div class="card single-block">
       <div class="card-header" role="tab" id="headingOne">            
@@ -25,9 +25,9 @@
                       <tr>
                         <th scope="row"><%= coin.ticker %></th>
                         <td><%= current_user.calculate_quantity(coin.id) %></td>
-                        <td><%= coin.current_price %></td>
-                        <td><%= current_user.calculate_quantity(coin.id) * coin.current_price %></td>
-                        <td><%= current_user.sum_pnl_coin(coin.id)  %></td>
+                        <td><%= number_to_currency coin.current_price %></td>
+                        <td><%= number_to_currency(current_user.calculate_quantity(coin.id) * coin.current_price) %></td>
+                        <td><%= number_to_currency current_user.sum_pnl_coin(coin.id)  %></td>
                       </tr>
                      <% end %> 
                   <% end %>
@@ -36,7 +36,7 @@
                         <td><%=  %></td>
                         <td><%=  %></td>
                         <td><%=  %></td>
-                        <td><%=  current_user.total_pnl %></td>
+                        <td><%=  number_to_currency current_user.total_pnl %></td>
                       </tr>
                 </tbody>
               </table>
@@ -47,7 +47,7 @@
 </div> <!-- Grid wrapper ends -->
 
 
-<div id="tables" class="element_single">
+<div id="tables" class="element_single container">
   <div id="accordion" role="tablist" aria-multiselectable="true">
     <div class="card single-block">
       <div class="card-header" role="tab" id="headingOne">            
@@ -74,11 +74,11 @@
                     <tr>
                       <th scope="row"><%= trade.id %></th>
                       <td><%= trade.coin.ticker %></td>
-                      <td><%= trade.execution_price %></td>
+                      <td><%= number_to_currency trade.execution_price %></td>
                       <td><%= trade.direction %></td>
                       <td><%= trade.quantity %></td>
-                      <td><%= trade.coin.current_price %></td>
-                      <td><%= trade.individual_trade_pnl %></td>
+                      <td><%= number_to_currency trade.coin.current_price %></td>
+                      <td><%= number_to_currency trade.individual_trade_pnl %></td>
                       <% if current_user %>
                         <td>
                           <div class="btn-group" role="group" aria-label="Basic example">

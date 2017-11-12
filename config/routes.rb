@@ -13,15 +13,14 @@ Rails.application.routes.draw do
   delete '/trades/:id' => 'trades#destroy'
 
   get '/wallets' => 'wallets#index'
-  get '/wallets/new' => 'wallets#new'
-  post '/wallets' => 'wallets#create'
-  delete '/wallets/:id' => 'wallets#destroy'
-  # get '/wallettest' => 'wallets#wallettest'
-  # get '/wallettest2' => 'wallets#wallettest2'
-  get '/wallettest4' => 'wallets#wallettest4'
-  get '/wallettest5' => 'wallets#wallettest5'
-  get '/vue-index', to: 'wallets#vue_index'
 
+  namespace :api do
+    namespace :v1 do
+      get '/wallets' => 'wallets#index'
+      post '/wallets' => 'wallets#create'
+      delete '/wallets/:id' => 'wallets#destroy'
+    end
+  end
 
 
   get '/alerts' => 'pings#index'

@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<h1 class="marginslol">New Wallet</h1>
+<h1 class="container">New Wallet</h1>
   <% if @errors %>
     <div id="error_explanation">
       <h2><%= pluralize(@wallet.errors.count, "Error") %> prohibited this trade from being entered</h2>
@@ -17,7 +17,7 @@
 
 
 <%= form_tag "/wallets", method: :post do %>
-  <div class="display-single_element text_input">
+  <div class="display-single_element text_input container">
       <form >
         <div class="form-group row">
           <label for="example-text-input" class="col-md-2 col-form-label">Wallet Address</label>

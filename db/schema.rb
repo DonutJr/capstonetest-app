@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105210059) do
+ActiveRecord::Schema.define(version: 20171112171534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171105210059) do
   end
 
   create_table "pings", force: :cascade do |t|
-    t.integer "price"
+    t.decimal "price", precision: 7, scale: 3
     t.integer "coin_id"
     t.boolean "triggered"
     t.integer "user_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20171105210059) do
   end
 
   create_table "trades", force: :cascade do |t|
-    t.integer "execution_price"
+    t.decimal "execution_price", precision: 7, scale: 3
     t.integer "quantity"
     t.string "direction"
     t.datetime "created_at", null: false

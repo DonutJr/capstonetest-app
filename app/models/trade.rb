@@ -16,10 +16,4 @@ class Trade < ApplicationRecord
       (self.coin.current_price - self.execution_price) * self.quantity * -1
     end
   end
-
- 
-
-
-
-
 end

@@ -94,7 +94,7 @@
 
         <div class="navbar-collapse">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item dropdown drop_single ">
@@ -124,73 +124,88 @@
                 <li><a href="/alerts/new">New Alert</a></li>
               </ul>
             </li>
-            <li class=" dropdown megaDropMenu nav-item " >
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0)">FAQ</a>
-              <ul class="row dropdown-menu">
-                <li class="col-md-4 col-xs-12">
-                  <ul class="list-unstyled">
-                    <li><a href="elements-alert.html">Alerts</a></li>
-                    <li><a href="elements-animation.html">Animation</a></li>
-                    <li><a href="elements-background.html">Background</a></li>
-                    <li><a href="elements-badge.html">Badge</a></li>
-                    <li><a href="elements-breadcrumb.html">Breadcrumb</a></li>
-                    <li><a href="elements-buttons.html">Buttons</a></li>
-                    <li><a href="elements-buttons-group.html">Button Group</a></li>
-                    <li><a href="elements-card.html">card</a></li>
-                    <li><a href="elements-carousel.html">Carousel</a></li>
-                    <li><a href="elements-collapse.html">Collapse</a></li>
-                    <li><a href="elements-countdown.html">Countdown</a></li>
-                    <li><a href="elements-dropdown.html">Dropdowns</a></li>
-                  </ul>
-                </li>
-                <li class="col-md-4 col-xs-12">
-                  <ul class="list-unstyled">
-                    <li><a href="elements-forms.html">Forms</a></li>
-                    <li><a href="elements-gallery.html">Gallery</a></li>
-                    <li><a href="elements-iconset.html">Iconset</a></li>
-                    <li><a href="elements-image.html">Image</a></li>
-                    <li><a href="elements-input_group.html">Input Group</a></li>
-                    <li><a href="elements-list-group.html">List Group</a></li>
-                    <li><a href="elements-map.html">Map</a></li>
-                    <li><a href="elements-modal.html">Modal</a></li>
-                    <li><a href="elements-navs.html">Navs</a></li>
-                    <li><a href="elements-navbar.html">Navbar</a></li>
-                    <li><a href="elements-pagination.html">Pagination</a></li>
-                    <li><a href="elements-popovers.html">Popovers</a></li>
-                  </ul>
-                </li>
-                <li class="col-md-4 col-xs-12">
-                  <ul class="list-unstyled">
-                    <li><a href="elements-pricing.html">Pricing Table</a></li>
-                    <li><a href="elements-progressbar.html">Progress</a></li>
-                    <li><a href="elements-responsive.html">Responsive utilities</a></li>
-                    <li><a href="elements-scrollspy.html">Scrollspy</a></li>
-                    <li><a href="elements-seperator.html">Seperator</a></li>
-                    <li><a href="elements-tabs.html">Tabs & wizards</a></li>
-                    <li><a href="elements-tables.html">Tables</a></li>
-                    <li><a href="elements-team.html">Team</a></li>
-                    <li><a href="elements-testimonials.html">Testimonials</a></li>
-                    <li><a href="elements-tooltips.html">Tooptips</a></li>
-                    <li><a href="elements-typography.html">Typography</a></li>
-                    <li><a href="elements-video.html">Video & Audio</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
           </ul>
         </div>
         <!-- header search ends-->
       </div><!-- NAVBAR ENDS-->
     </nav>
   </header>
-      <%= yield %>
+
+<%= yield %>
 </div>
   
 
+<!-- FOOTER -->
+  <footer class="footer footer-classic bg-navy">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="footer-text">
+            <a href="">
+          <img class="footer-logo" >
+              
+            </a>
+            <p>
+              Thanks for checking out my website. I hope this tool helps you better manage your risk and track your positions. 
+            </p>
+            <div class="social-icons">
+              <a href="https://twitter.com/cyounessi1" class="btn btn-social btn-social-o twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+              
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-2">
+          <div class="links">
+            <h3>Links</h3>
+            <ul class="">
+              <li><a href="/">Home</a></li>
+              <li><a href="/wallets">Hodlers</a></li>
+              <li><a href="/trades">Trades</a></li>
+              <li><a href="/coins">Coins</a></li>
+              <li><a href="/alerts">Alerts</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="location">
+            <h3>Contact Info</h3>
+            <ul>
+              <li><div class="social-icons">
+              <a href="https://twitter.com/cyounessi1" class="btn btn-social btn-social-o twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+              
 
+            </div>
+          </li>
+              
+              <li> <a href="mailto"> cyrus.younessi@gmail.com </a></li>
+            </ul>
+          </div>
+        </div>
+        
 
+      <!-- BACK TO TOP BUTTON -->
+        <!-- <a href="#pageTop" class="backToTop"><i class="fa fa-angle-up" aria-hidden="true"></i></a> -->
 
-
+        <!-- COPY RIGHT -->
+      </div>
+      <div class="copyright">
+        <hr>
+        <div class="row justify-content-center">
+          <div class="col-sm-6">
+            <div class="copyRight_text text-center">
+              <p> &copy; 2017 Copyright  <a class="text-primary" href="http://www.iamabdus.com/" target="_blank"></a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
 
 <!-- JAVASCRIPTS -->
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"
