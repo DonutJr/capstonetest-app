@@ -9,7 +9,7 @@
       <div class="card-header" role="tab" id="headingOne">            
         <div class="display-single_element">
           <h3 style="margin: 30px 0">Your Wallets</h3>
-            <%= link_to "Add Wallet", "/wallets/new", class: "btn btn-primary"  %>
+            
             <input v-model="newWallet">
             <button class="btn btn-primary btn-rounded" role="group" aria-label="Basic example" v-on:click="addWallet(newWallet)">Add Wallet JS</button>
             <table class="table table-inverse">
