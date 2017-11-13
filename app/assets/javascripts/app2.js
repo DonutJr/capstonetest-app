@@ -1,6 +1,7 @@
 /* global Vue */
 document.addEventListener("DOMContentLoaded", function(event) { 
-  
+  // rails assets:precompile
+  // git push heroku master
 
   var Web3 = require('web3');
   var web3 = new Web3();
@@ -32,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     mounted() {
-        // this.loadWallets();
       $.get('/api/v1/wallets', function(data) {
         this.addresses = data.wallets;
         this.vuecoins = data.coins;
@@ -43,15 +43,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     methods: {
-      // loadWallets: function() {
-      //   this.$http.get('/wallets', function(data, status, request){
-      //     if(status == 200)
-      //     {
-      //       this.addresses = data.wallets;
-      //       this.vuecoins = data.coins;
-      //     }
-      //   });
-      // },
       getBalances() {
         var i = 0;
         for (let address of this.addresses) {
@@ -110,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
 
         for (let address of this.addresses) {
-          // piedata["ETH"] += address.eth_position_value;
           for (let coin of address.coins) {
             for (let dic of piedata) {
               if (coin.name === dic.name) {
@@ -131,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 type: 'pie'
             },
             title: {
-                text: 'Token Breakdown'
+                text: 'Wallet Breakdown'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -174,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
           }
         })
-        
+        this.newWallet = ""; 
       },
 
       deleteWallet(addr) {
@@ -186,13 +176,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
           method: 'DELETE',
           success: function(result) {
-            console.log('success', index, that.addresses)
-            that.addresses.splice(index, 1)
+            that.addresses.splice(index, 1);
+            that.getBalances();
+            that.addSeen();
+            that.displayCharts();
           }
         });
       }
-
     }
-
   });
 });

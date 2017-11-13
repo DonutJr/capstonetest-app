@@ -1,8 +1,6 @@
 <br> <br> <br> <br>
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <div id="app2">
-
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 <div id="tables" class="element_single container">
   <div id="accordion" role="tablist" aria-multiselectable="true">
     <div class="card single-block">
@@ -10,9 +8,9 @@
         <div class="display-single_element">
           <h3 style="margin: 30px 0">Your Wallets</h3>
             
-            <input v-model="newWallet">
-            <button class="btn btn-primary btn-rounded" role="group" aria-label="Basic example" v-on:click="addWallet(newWallet)">Add Wallet JS</button>
+            <button class="btn btn-primary " role="group" aria-label="Basic example" v-on:click="addWallet(newWallet)">Add Wallet:</button>
             <table class="table table-inverse">
+            <input v-model="newWallet">
                 <thead>
                   <tr>
                     <th>Wallet Address</th>
@@ -48,7 +46,6 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-<script></script>
+
 
   

@@ -7,6 +7,9 @@ class Ping < ApplicationRecord
   
   def self.text_alert
       #how do i only pass in user's phone number
+      # User.all.each do |user|
+
+      # end
       @alerts = Ping.where(triggered: nil)
       @coins = Coin.get_price
       @eth = Coin.find_by(ticker: "ETH")
