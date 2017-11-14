@@ -3,16 +3,22 @@
 }
 
 .rocinag img {
-  height: 75%;
-  width: 75%;
+
   display: block;
   margin: auto;
+     position: relative;
+
+    width:  282px;
+    height: 282px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
 }
 
 .ctnr-border {
   
   padding: 25px 25px 25px 25px;
-  border: 2px solid #828384;
+  border: 2px solid #828384 !important;
 }
 
 .logotest img {

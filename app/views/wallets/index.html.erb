@@ -10,7 +10,7 @@
             
             <button class="btn btn-primary " role="group" aria-label="Basic example" v-on:click="addWallet(newWallet)">Add Wallet:</button>
             <table class="table table-inverse">
-            <input v-model="newWallet">
+            <input v-model="newWallet" size="50">
                 <thead>
                   <tr>
                     <th>Wallet Address</th>
@@ -35,6 +35,7 @@
                   </tr>
                 </tbody>
               </table>
+              <p>*Click wallet to reveal token balances</p>
         </div>
       </div> <!-- element-content ends -->
     </div>

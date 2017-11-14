@@ -1,5 +1,6 @@
 class PingsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @coins = Coin.get_price
     if current_user

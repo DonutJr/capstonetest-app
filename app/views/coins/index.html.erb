@@ -10,8 +10,7 @@
     <div class="row justify-content-center">
       <div class="col-sm-8">
         <div class="sectionTitle text-center">
-          <h2>Coin Prices</h2>
-          <p>Eth and Token Prices</p>
+          <h2>Ether and Token Prices</h2>
         </div>
       </div>
     </div>
@@ -23,21 +22,18 @@
           <div class="col-md-4">
             <div class="card card-style3">
               <div class="card_img rocinag">
-                <a href="#"><img class="img-full" data-original="img/logos/<%= coin.id %>.png" alt="Card image"></a> 
+                <a href="https://bittrex.com/Market/Index?MarketName=ETH-<%= coin.ticker %>" target="_blank"><img class="img-full" data-original="img/logos/<%= coin.id %>.png" alt="Card image"></a> 
               </div>
-              <div class="card-block ">
-                <ul class="list-inline ctnr-border">
-                  <li>
-                    <a href="https://bittrex.com/Market/Index?MarketName=ETH-<%= coin.ticker %>"><i  aria-hidden="true"></i> <span class="text-primary"><%= coin.name %></span></a>
-                  </li>
-                  <li>
-                    <a href="#"><i  aria-hidden="true"></i> MktCap: <%= number_to_currency(coin.marketcap) %></a>
-                  </li>
-                  
-                  <li class="card-title">Price: <%= number_to_currency coin.current_price %></li>
-                </ul>
 
+              <div class="card-block ctnr-border">
+                <ul class="">
+                  <li><%= coin.ticker %></li>
+                  <li><%= coin.name %></li>
+                  <li>MktCap: <%= number_to_currency(coin.marketcap) %></li>
+                  <li class="card-title"><a href="https://bittrex.com/Market/Index?MarketName=ETH-<%= coin.ticker %>" target="_blank">Price: <%= number_to_currency coin.current_price %></a></li>
+                </ul>
               </div>
+
             </div>
           </div>
         <% end %>

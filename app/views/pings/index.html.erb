@@ -2,16 +2,13 @@
 <%= form_tag "/users/#{current_user.id}", method: :patch do %>
   <div class="display-single_element text_input container">
     <form >
+        <input class="btn btn-primary " type="submit" value="Add Phone Number">
+          <input class="form-control col-md-2" type="text" name="phone_number" value="<%=current_user.phone_number %>">
       <div class="form-group row">
-        <label for="example-text-input" class="col-md-2 col-form-label">
-        Phone Number
-        </label>
-        <div class="col-md-2">
-          <input class="form-control" type="text" name="phone_number">
-        </div>
+      
+        
       </div>
 
-        <input class="btn btn-primary marginslol" type="submit" value="Add Phone Number">
     </form>
   </div>
 <% end %>
@@ -42,15 +39,13 @@
                     <tr>
                       <th scope="row"><%= alert.id %></th>
                       <td><%= alert.coin.ticker %></td>
-                      <td><%= alert.price %></td>
-                      <td><%= alert.coin.current_price %></td>
+                      <td><%= number_to_currency alert.price %></td>
+                      <td><%= number_to_currency alert.coin.current_price %></td>
                       <td><%= alert.triggered %></td>
-                      <% if current_user %>
-                        <td>
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                          <%= link_to "delete", "/alerts/#{ alert.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
-                          </div>
-                      <% end %>
+                      <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                        <%= link_to "delete", "/alerts/#{ alert.id }", method: :delete, class: "btn btn-primary btn-rounded" %></td> 
+                        </div>
                     </tr>
                   <% end %>
                 </tbody>
