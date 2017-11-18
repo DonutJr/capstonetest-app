@@ -14,5 +14,15 @@ class Coin < ApplicationRecord
     self.current_price * self.supply
   end
 
+  def self.get_personal_price
+    api_data = Unirest.get("https://bittrex.com/api/v1.1/public/getmarketsummaries").body['result']
+    main_coin_tickers = ["OMG", "REP", "DGD", "XMR", "ZEC"]
+    main_coins = all.select { |coin| main_coin_tickers.include? coin.ticker }
+
+    main_coins.each do |coin|
+      coin.update(current_price: api_data.select{ |token| token["MarketName"] == "ETH-#{coin.ticker}" }[0]["Last"] )
+    end
+  end
+
 end
 

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/coins' => 'coins#index'
   get '/coins/:id' =>'coins#show'
 
+  get '/prices' => 'prices#index'
+
   get '/trades' => 'trades#index'
   get '/trades/new' => 'trades#new'
   post '/trades' => 'trades#create'
